@@ -6,69 +6,75 @@ This layer defines the decentralized logic, governance constraints, auditability
 ---
 
 # 1.0 Overview  
-The blockchain layer coordinates consent, activity logging, credential progression, and tokenomics across the ecosystem.  
-Each contract is independently verified on Sepolia and designed for transparent and observable behavior with no hidden logic.
+The blockchain layer coordinates consent, activity logging, session hashing, and tokenomics across the ecosystem.  
+Each contract is verified on Sepolia and designed for transparent, observable behavior.
 
 ---
 
-# 2.0 Verified Smart Contracts
+# 2.0 Verified Smart Contracts (Updated)
 
-## 2.1 ERC-20 Tokens
-### EncryptHealthToken (EHT)  
-- **Address:** `0xbDaeb1d05E02D2751Ad07121510b5f0C436E2CdC`  
-- **Purpose:** Data-governance utility token; minted for compliant actions and milestones.  
-- **Functions:** mint, burn, transfer, governance-controlled supply.
+## 2.1 Core Governance + Compliance
 
-### HypnoNeuroToken (HNT)  
-- **Address:** `0x411426f8E735F7940B20491609F08817A805b198`  
-- **Purpose:** Engagement-based reward token; ties to progression milestones in L1–L3.  
+### **ComplianceLog**  
+- **Address:** `0xb169383145070fbC19EF972569E6ec35B253a69F`  
+- **Purpose:** Immutable audit ledger for all major protocol events.
 
----
-
-## 2.2 NFT Credentialing
-### MindMasteryNFT (L1–L3)  
-- **Address:** `0xCb9EcB00574DB29976c7C54045d443666D5C7771`  
-- **Purpose:** Stage-based credentialing for the modular framework (L1 induction, L2 biochemical logic, L3 narrative).  
-- **Progression:** Token thresholds + consent + session activity.
+### **ConsentPolicy**  
+- **Address:** `0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E`  
+- **Purpose:** Global consent state registry (grant/revoke).
 
 ---
 
-## 2.3 Compliance & Consent Governance  
-### ConsentPolicy.sol  
-- **Address:** `0xf57190E2FEd57190d89aD63eE21B718354D3EeF1`  
-- **Purpose:** On-chain consent registry (granular toggles, revocation tracking, auditability).  
-- **Outputs:** event-based compliance logs mapped to HIPAA/GDPR in the Security & Privacy layer.
+## 2.2 Session Hashing + Analytics Anchoring
+
+### **EncryptHealthSessionStore**  
+- **Address:** `0x3Be8285F089cb53ed811CF0d8c79c19D8245db09`  
+- **Purpose:** Stores SHA-256 hashes of AI-generated session recommendations.
 
 ---
 
-## 2.4 Activity + Device Logging  
-### UserActivity.sol  
-- **Address:** `0xF63e9400807184e726445E105EC7a6C6Af1a86fB`  
-- **Purpose:** Links user sessions, device IDs, sensor datapoints, and earned tokens.  
-- **Outputs:** `SessionLogged`, `DeviceLinked`, `TokenEarned` events used downstream for analytics.
+## 2.3 Wearable + App-Level Consent
+
+### **NeuroBalanceConsent**  
+- **Address:** `0x59bF3605e1e62867Ad880eb5451789290F56E369`  
+- **Purpose:** Controls wearable-data permissions (HR, mood, sleep, motion).
 
 ---
 
-# 3.0 Governance Structure
+## 2.4 Activity Tracking
 
-## 3.1 Roles
-- **Owner**  
-  Contract deployment, upgrade approvals, treasury authority.
-- **Admin**  
-  Consent configuration, token distribution approvals, NFT role assignment.
-- **End User (Wallet Holder)**  
-  Controls consent, receives tokens, progresses credential tiers.
+### **UserActivity**  
+- **Address:** `0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848`  
+- **Purpose:** Records user actions, sessions, and device-linked events.
 
 ---
 
-## 3.2 Upgradeability Plan  
-All MVP contracts are fixed-logic.  
-Future upgrade paths include:
-- Proxy pattern (EIP-1967)  
-- Delayed-execution governance  
-- Multi-sig release gates  
+## 2.5 Tokenomics Layer
+
+### **WellnessToken (ERC-20)**  
+- **Address:** `0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC`  
+- **Purpose:** Reward token for compliant activity and milestones.
 
 ---
+
+# 3.0 Inter-Contract Architecture
+
+```mermaid
+flowchart TD
+
+    U[User Wallet<br>MetaMask] --> S[EncryptHealthSessionStore<br>0x3Be82...db09]
+    U --> C1[ConsentPolicy<br>0x75Db...F1c4E]
+    U --> C2[NeuroBalanceConsent<br>0x59bF...E369]
+    U --> A[UserActivity<br>0x2cc9...A848]
+    U --> T[WellnessToken (ERC-20)<br>0x18d7...9DDC]
+
+    C1 --> L[ComplianceLog<br>0xb169...a69F]
+    C2 --> L
+    A --> L
+    S --> L
+
+    T --> R[(Incentive Layer)]
+
 
 # 4.0 Inter-Contract Architecture
 
