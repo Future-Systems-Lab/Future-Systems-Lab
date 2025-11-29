@@ -166,8 +166,6 @@ This section connects with the Security & Privacy layer:
 # 8.0 Summary  
 The Blockchain Architecture Layer defines the decentralized foundation for identity-linked consent, reward mechanisms, transparent governance, and system-wide data integrity, forming the connective layer of the Future Systems Lab ecosystem.
 
-=======
-
 Contract Addresses Used in Diagram
 
 | Contract                  | Address                                                                                                                         |
@@ -178,7 +176,6 @@ Contract Addresses Used in Diagram
 | UserActivity              | [`0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848`](https://sepolia.etherscan.io/address/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848) |
 | WellnessToken             | [`0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC`](https://sepolia.etherscan.io/address/0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC) |
 | ComplianceLog             | [`0xb169383145070fbC19EF972569E6ec35B253a69F`](https://sepolia.etherscan.io/address/0xb169383145070fbC19EF972569E6ec35B253a69F) |
->>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 
 ---
 
