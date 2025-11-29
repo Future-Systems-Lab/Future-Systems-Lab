@@ -78,15 +78,13 @@ High-level cross-table linkage:
 
 # 4.0 On-Chain ↔ Off-Chain Mapping  
 
-| Blockchain Event             | SQL Table / Field                   | Purpose |
-|------------------------------|-------------------------------------|---------|
-| `SessionLogged`              | Sessions.SessionID                  | Session record anchor |
-| `ConsentUpdated`             | Users.Role / metadata tables        | Consent state mapping |
-| `TokenEarned` (HNT/EHT)      | Tokens.Amount, Tokens.EarnedDate    | Reward accounting |
-| `DeviceLinked`               | Devices.DeviceID                    | Device identity tracking |
-| `NFTUnlocked`                | Inventory / Protocol entries        | Stage unlock metadata |
-
-This mapping ensures consistency between decentralized events and internal analytics.
+| **Blockchain Event**       | **SQL Table / Field**                 | **Purpose**                    |
+|----------------------------|----------------------------------------|--------------------------------|
+| `SessionLogged`            | `Sessions.SessionID`                   | Session record anchor          |
+| `ConsentUpdated`           | `Users.Role` / metadata tables         | Consent state mapping          |
+| `TokenEarned` (HNT/EHT)    | `Tokens.Amount`, `Tokens.EarnedDate`   | Reward accounting              |
+| `DeviceLinked`             | `Devices.DeviceID`                     | Device identity tracking       |
+| `NFTUnlocked`              | `Inventory.ItemID` / protocol entries  | Stage unlock metadata          |
 
 ---
 
