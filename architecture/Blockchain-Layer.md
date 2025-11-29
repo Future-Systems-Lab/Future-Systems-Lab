@@ -63,22 +63,31 @@ Each contract is verified on Sepolia and designed for transparent, observable be
 
 # 3.0 Inter-Contract Architecture
 
-```mermaid
 flowchart TD
 
-    U[User Wallet] --> S[EncryptHealthSessionStore\n0x3Be82...db09]
-    U --> C1[ConsentPolicy\n0x75Db...F1c4E]
-    U --> C2[NeuroBalanceConsent\n0x59bF...E369]
-    U --> A[UserActivity\n0x2cc9...A848]
-    U --> T[WellnessToken ERC20\n0x18d7...9DDC]
+    U[User Wallet] --> S[EncryptHealthSessionStore]
+    U --> C1[ConsentPolicy]
+    U --> C2[NeuroBalanceConsent]
+    U --> A[UserActivity]
+    U --> T[WellnessToken]
 
-    C1 --> L[ComplianceLog\n0xb169...a69F]
+    C1 --> L[ComplianceLog]
     C2 --> L
     A --> L
     S --> L
 
     T --> R[Incentive Layer]
 
+### Contract Addresses Used in Diagram
+
+| Contract | Address |
+|---------|---------|
+| EncryptHealthSessionStore | `0x3Be8285F089cb53ed811CF0d8c79c19D8245db09` |
+| ConsentPolicy | `0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E` |
+| NeuroBalanceConsent | `0x59bF3605e1e62867Ad880eb5451789290F56E369` |
+| UserActivity | `0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848` |
+| WellnessToken | `0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC` |
+| ComplianceLog | `0xb169383145070fbC19EF972569E6ec35B253a69F` |
 
 
 # 4.0 Inter-Contract Architecture
