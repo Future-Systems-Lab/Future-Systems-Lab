@@ -126,3 +126,23 @@ The Security & Privacy Layer ensures:
 - Every component connects to a **unified, immutable audit trail**
 
 This layer forms the foundation of **trust, integrity, and compliance** for the entire Future Systems Lab ecosystem.
+
+---
+
+## 🔗 Security & Compliance References
+
+### Verified Contracts on Sourcify
+- ComplianceLog → https://repo.sourcify.dev/contracts/full_match/11155111/0xb169383145070fbC19EF972569E6ec35B253a69F/
+- ConsentPolicy → https://repo.sourcify.dev/contracts/full_match/11155111/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E/
+
+### Contract Source Files
+- ComplianceLog.sol → https://github.com/Future-Systems-Lab/Smart-Contracts/blob/main/ComplianceLog.sol
+- ConsentPolicy.sol → https://github.com/Future-Systems-Lab/Smart-Contracts/blob/main/ConsentPolicy.sol
+
+### Architecture Directory
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture
+
+### Future Security Diagram (PNG)
+(Will be added after final diagram export)
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture/diagrams
+
