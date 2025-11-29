@@ -1,8 +1,9 @@
 <!-- Rights Reserved, Unlicensed -->
 
 <p align="center">
-  <img src="./assets/future-systems-lab-header.png" alt="Future Systems Lab Banner" width="1000">
+  <img src="./assets/future-systems-lab-header.png" alt="Future Systems Lab Banner" width="900">
 </p>
+
 
 ---
 
