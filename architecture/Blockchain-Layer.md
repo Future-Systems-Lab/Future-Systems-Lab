@@ -140,11 +140,14 @@ This creates a permanent, queryable audit ledger.
 # 7.0 Compliance Mapping  
 This section connects with the Security & Privacy layer:
 
-- Consent events align with HIPAA 164.508  
-- Revocation maps to GDPR Art.7  
-- Tokens do not encode PHI  
-- NFT progression is non-clinical and non-diagnostic  
-- All data used is pseudonymized  
+| Requirement        | Control           | Location               |
+| ------------------ | ----------------- | ---------------------- |
+| HIPAA 164.508      | Consent gating    | ConsentPolicy.sol      |
+| HIPAA 164.312      | Audit controls    | ComplianceLog          |
+| GDPR Art.7         | Revocation        | ConsentPolicy.sol      |
+| GDPR Art.25        | Privacy by design | Hash-only architecture |
+| FDA 21 CFR Part 11 | Event signatures  | Blockchain timestamps  |
+
 
 
 # 8.0 Summary  
