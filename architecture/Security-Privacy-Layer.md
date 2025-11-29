@@ -97,6 +97,7 @@ The system protects against:
 | `SessionLogged`     | EncryptHealthSessionStore | Hash-based session verification  |
 | `TokenMinted`       | WellnessToken             | Verified reward issuance         |
 | All Events          | ComplianceLog             | Permanent audit record           |
+
 7.0 Compliance Alignment
 | Requirement        | Control               | Location               |
 | ------------------ | --------------------- | ---------------------- |
