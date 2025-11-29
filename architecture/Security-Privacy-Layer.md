@@ -103,7 +103,7 @@ The system protects against:
 
 ---
 
-#7.0 Compliance Alignment
+# 7.0 Compliance Alignment
 
 | Requirement        | Control               | Location               |
 | ------------------ | --------------------- | ---------------------- |
