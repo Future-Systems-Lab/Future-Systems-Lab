@@ -89,27 +89,53 @@ flowchart TD
 The ecosystem functions through **event-driven interoperability**:
 
 
+### 4.1 Contract Mapping for the Flow
 
-**Flow:**  
-A recorded session → permission check → reward token mint → potential NFT tier unlock.
-
+| Stage                       | Contract | Blockscout Link |
+|-----------------------------|----------|-----------------|
+| Session Recorded            | UserActivity | https://eth-sepolia.blockscout.com/address/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848 |
+| Permission Check            | ConsentPolicy | https://eth-sepolia.blockscout.com/address/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E |
+| Reward Token Mint           | WellnessToken | https://eth-sepolia.blockscout.com/address/0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC |
+| NFT Tier Unlock (future)    | MindMasteryNFT | https://eth-sepolia.blockscout.com/address/0xCb9EcB00574DB29976c7C54045d443666D5C7771 |
+| Compliance Event Emission   | ComplianceLog | https://eth-sepolia.blockscout.com/address/0xb169383145070fbC19EF972569E6ec35B253a69F |
 
 
 # 5.0 Tokenomics Model
 
 ## 5.1 Issuance Logic  
-- L1 session completion → **3 HNT**  
-- L2 biochemical milestone → **3 HNT**  
-- L3 narrative integration → **3 HNT**  
-- Governance actions (EncryptHealth) → **EHT**
+The reward system follows a fixed-issuance model designed to reinforce user engagement, biochemical milestones, and governance participation.
+
+### **HNT — HypnoNeuro Engagement Token**
+- **L1 Session Completion:** +3 HNT  
+- **L2 Biochemical Milestone:** +3 HNT  
+- **L3 Narrative Integration:** +3 HNT  
+
+HNT reinforces progression through the L1–L3 modular framework (induction → biochemical logic → narrative integration).
+
+### **EHT — EncryptHealth Governance Token**
+- **Governance Actions:** +EHT minted for completing approved EncryptHealth governance or compliance tasks (consent updates, audit interactions, DAO-aligned tasks).
+
+EHT reinforces data-governance behaviors and transparent system operations.
+
+---
 
 ## 5.2 Burn Logic  
-- Users may burn tokens for discounted access or progression unlocks.
+Users may burn tokens to:
+- Unlock progression gates  
+- Redeem protocol-governed discounts  
+- Signal commitment to long-term engagement  
+
+---
 
 ## 5.3 Treasury  
-- DAO-aligned treasury managed via multi-sig (future state).  
-- All flows are transparent, observable, and recorded on-chain.
+A future multi-sig–controlled treasury will manage:
+- Reward pool refills  
+- Governance allocation cycles  
+- Stakeholder distributions  
 
+All token flows remain fully transparent and traceable through on-chain events.
+
+---
 
 # 6.0 Audit & Security
 
