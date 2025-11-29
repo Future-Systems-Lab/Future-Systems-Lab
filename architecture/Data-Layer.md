@@ -327,3 +327,20 @@ It integrates wearable data, session hashing, reward events, consent updates, an
 
 The Data Layer provides a unified, analytics-ready foundation that mirrors decentralized events while maintaining full privacy and compliance.
 It integrates wearable data, session hashing, reward events, consent updates, and progression logic into a traceable, auditable, pseudonymized relational model that supports the entire Future Systems Lab ecosystem.
+
+---
+
+## 🔗 Architecture & Diagram References
+
+### ERD Diagram (PNG)
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/diagrams/data-layer-erd.png
+
+### Mermaid ERD Source
+See the **Mermaid ERD section** within this document for the full source.
+
+### Architecture Directory
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture
+
+### SQL Schema Reference
+Schema is defined directly inside this file under **Relational Schema** and matches the on-chain event mappings.
+
