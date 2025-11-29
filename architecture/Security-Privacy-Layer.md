@@ -32,7 +32,6 @@ It guarantees that every interaction—device, session, consent, or reward—is 
 
 # 3.0 Security Flow Diagram (Mermaid)
 
-```mermaid
 flowchart TD
 
     U[User Wallet] --> CP[ConsentPolicy]
