@@ -45,7 +45,7 @@ flowchart TD
 
     CL --> SEC[Security Layer Analytics]
 
-## 4.0 Enforcement Model
+# 4.0 Enforcement Model
 
 ### **Consent Enforcement**
 - All actions gated through **ConsentPolicy**
@@ -76,7 +76,7 @@ flowchart TD
 
 ---
 
-## 5.0 Threat Model
+# 5.0 Threat Model
 
 The system protects against:
 
@@ -88,7 +88,10 @@ The system protects against:
 - **Cross-app replay attacks**  
 - **Governance manipulation** (invalid or unauthorized EHT actions)
 
-6.0 On-Chain Event Mapping
+---
+
+# 6.0 On-Chain Event Mapping
+
 | Event               | Contract                  | Security Purpose                 |
 | ------------------- | ------------------------- | -------------------------------- |
 | `ConsentUpdated`    | ConsentPolicy             | Data-use enforcement, revocation |
@@ -98,7 +101,10 @@ The system protects against:
 | `TokenMinted`       | WellnessToken             | Verified reward issuance         |
 | All Events          | ComplianceLog             | Permanent audit record           |
 
-7.0 Compliance Alignment
+---
+
+#7.0 Compliance Alignment
+
 | Requirement        | Control               | Location               |
 | ------------------ | --------------------- | ---------------------- |
 | HIPAA 164.508      | Consent gating        | ConsentPolicy.sol      |
@@ -107,7 +113,9 @@ The system protects against:
 | GDPR Art.25        | Privacy by design     | Hash-only architecture |
 | FDA 21 CFR Part 11 | Signature equivalents | Blockchain timestamps  |
 
-## 8.0 Summary
+---
+
+# 8.0 Summary
 
 The Security & Privacy Layer ensures:
 
