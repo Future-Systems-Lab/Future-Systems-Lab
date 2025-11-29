@@ -1,168 +1,156 @@
-// Rights Reserved, Unlicensed
+<!-- Rights Reserved, Unlicensed -->
 
-# 🗄️ Future Systems Lab — Data Layer Architecture
-SQLite • PostgreSQL • Off-Chain Storage • Indexing • ETL • Consent Mapping
+# 🗂️ Data Layer Architecture  
+This layer defines the off-chain relational structures, data ingestion logic, blockchain event mapping, and analytics foundation that supports the Future Systems Lab ecosystem.
 
-This Data Layer supports all Future Systems Lab projects, providing secure, efficient, compliant off-chain storage that complements the minimal on-chain state.
+---
 
-# 1. Data Storage Overview
+# 1.0 Purpose  
+The Data Layer provides a structured, queryable environment for:
 
-## 1.1 Hybrid Architecture
+- user activity logs  
+- session details  
+- device metadata  
+- sensor datapoints  
+- token reward events  
+- inventory/protocol items  
 
-### On-Chain
-- Consent hashes
-- Session hashes
-- Token mints
-- NFT ownership and progression
-- Device registration
-- Activity logging references
+It supports analytics, reporting, and simulation **without storing PHI**, ensuring pseudonymization and alignment with HIPAA and GDPR principles.
 
-### Off-Chain
-- Session notes
-- Orthomolecular metrics
-- Wearable sensor data
-- User activity records
-- Practitioner documentation
-- Compliance reports
-- Analytics datasets
+---
 
-# 2. Database Stack
+# 2.0 Relational Schema (SQLite)  
+The schema below was executed and validated inside `MyProject.db` to demonstrate the full working prototype.
 
-## 2.1 SQLite
-Used for prototyping and edge analytics.
+## 2.1 Users  
+Basic user attributes (pseudonymized):
 
-Schemas include:
-- Users
-- Practitioners
-- Sessions
-- Tokens
-- Devices
-- SensorData
-- Inventory
-- UserActivityRelational
 
-## 2.2 PostgreSQL
-Used for production storage.
+## 2.2 Practitioners  
+Practitioner profile linked to a user record:
 
-Features:
-- JSONB
-- Partitioned time-series tables
-- Row-level security
-- BRIN and GIN indexing
 
-# 3. Indexing and ETL Pipelines
+## 2.3 Sessions  
+Session logs linked to user + practitioner:
 
-## 3.1 Event Indexer
-Listens to:
-- ConsentSigned
-- TokenMinted
-- NFTUpgraded
-- DeviceRegistered
-- ActivityLogged
 
-Each event stored with:
-- event_id
-- tx_hash
-- timestamp
-- user_did
-- hash_reference
+## 2.4 Tokens  
+Off-chain mirrors of on-chain token issuance:
 
-## 3.2 ETL Pipelines
 
-### Extract
-- Wearable data ingestion
-- App summaries
-- Frontend JSON logs
-- Blockchain events
+## 2.5 Devices  
 
-### Transform
-- Hash sensitive fields
-- Normalize metrics
-- Map pseudonym → DID → wallet
-- Structure orthomolecular readings
 
-### Load
-- PostgreSQL relational tables
-- Analytics aggregates
-- Compliance mapping tables
+## 2.6 Sensor Data  
 
-# 4. Data Models
 
-## 4.1 Core Tables
-- users
-- devices
-- sessions
-- tokens
-- sensor_data
-- inventory
-- activity_relations
+## 2.7 Inventory  
 
-## 4.2 Consent Mapping Table
-| Field | Type |
-|-------|------|
-| consent_id | UUID |
-| user_did | TEXT |
-| signature | TEXT |
-| consent_hash | TEXT |
-| tx_hash | TEXT |
-| timestamp | DATETIME |
 
-# 5. High-Volume Sensor Handling
+## 2.8 UserActivityRelational  
+High-level cross-table linkage:
 
-## 5.1 Supported Modalities
-- HRV
-- Heart rate
-- EDA
-- Accelerometer
-- Dopamine/serotonin inference
-- Cognitive state scores
-- Breath pacing patterns
 
-## 5.2 Time-Series Strategy
-- Partitioned tables
-- BRIN indexing
-- JSONB sensor packets
+---
 
-# 6. Analytics Layer
+# 3.0 Entity-Relationship Diagram (ASCII)
 
-## 6.1 Aggregations
-- Session streaks
-- Token totals
-- Device-sync compliance
-- Stress recovery estimates
-- Orthomolecular deviations
-- HypnoNeuro state-match metrics
+   ┌───────────┐        ┌──────────────┐
+   │  Users    │ 1    n │  Sessions     │
+   └─────┬─────┘        └──────┬───────┘
+         │                     │
+         │ 1                  n│
+   ┌─────▼─────┐        ┌─────▼───────────┐
+   │Practitioners│       │   Tokens        │
+   └─────────────┘       └─────────────────┘
 
-## 6.2 Dashboards
-- Grafana
-- Metabase
-- Dune dashboards for blockchain analytics
+             1                     n
+   ┌─────────▼─────────┐   ┌───────▼─────────┐
+   │     Devices        │   │   SensorData     │
+   └────────┬──────────┘   └──────────────────┘
+            │
+            │ n
+   ┌────────▼──────────┐
+   │UserActivityRelational│
+   └──────────────────────┘
 
-# 7. Data Lifecycle Management
+---
 
-## 7.1 Creation
-- Consent signed → hash stored on-chain → full data off-chain
-- Session created → minimal chain reference → detailed record off-chain
+# 4.0 On-Chain ↔ Off-Chain Mapping  
 
-## 7.2 Access
-- Read-only APIs
-- DID or wallet-based permissions
-- Token/NFT gating future support
+| Blockchain Event             | SQL Table / Field                   | Purpose |
+|------------------------------|-------------------------------------|---------|
+| `SessionLogged`              | Sessions.SessionID                  | Session record anchor |
+| `ConsentUpdated`             | Users.Role / metadata tables        | Consent state mapping |
+| `TokenEarned` (HNT/EHT)      | Tokens.Amount, Tokens.EarnedDate    | Reward accounting |
+| `DeviceLinked`               | Devices.DeviceID                    | Device identity tracking |
+| `NFTUnlocked`                | Inventory / Protocol entries        | Stage unlock metadata |
 
-## 7.3 Revocation
-- Blockchain event marks consent invalid
-- Database updated accordingly
+This mapping ensures consistency between decentralized events and internal analytics.
 
-## 7.4 Retention
-- Educational-use data retention model
-- Audit-ready storage
-- Secure deletion upon user request
+---
 
-# 8. Appendices
-- PostgreSQL schema
-- SQLite schema
-- Indexer specification
-- ETL definitions
-- Data dictionaries
-- Consent-to-ledger mapping tables
+# 5.0 Data Flow Architecture  
 
+[Wearable Sensors]
+▼
+[Device API Ingestion]
+▼
+[SensorData Table]
+▼
+[Relational Linking → UserActivityRelational]
+▼
+[Analytics Engine / Dashboards]
+▼
+[Optional: Blockchain Emit → SessionLogged / TokenEarned]
+
+
+The Data Layer absorbs device input, user actions, and event logs into a unified relational structure.
+
+---
+
+# 6.0 Example Queries (Executed & Verified)
+
+### 6.1 Users with their sessions + token earnings
+```sql
+SELECT u.Name, s.SessionDate, t.Amount AS TokensEarned
+FROM Users u
+JOIN Sessions s ON u.UserID = s.UserID
+JOIN Tokens t ON u.UserID = t.UserID;
+
+SELECT u.Name, d.DeviceType, sd.Metric, sd.Value
+FROM Users u
+JOIN Devices d ON u.UserID = d.UserID
+JOIN SensorData sd ON d.DeviceID = sd.DeviceID;
+
+SELECT u.Name, SUM(t.Amount) AS TotalTokens
+FROM Users u
+JOIN Tokens t ON u.UserID = t.UserID
+GROUP BY u.UserID;
+
+SELECT u.Name, s.SessionDate, t.Amount AS Tokens, d.DeviceType, sd.Metric, i.ItemName
+FROM UserActivityRelational r
+JOIN Users u ON r.UserID = u.UserID
+JOIN Sessions s ON r.SessionID = s.SessionID
+JOIN Tokens t ON r.TokenID = t.TokenID
+JOIN Devices d ON r.DeviceID = d.DeviceID
+JOIN SensorData sd ON r.DataID = sd.DataID
+JOIN Inventory i ON r.ItemID = i.ItemID;
+
+7.0 Off-Chain Storage Standards
+
+SQLite (demo): lightweight and portable for prototypes.
+
+PostgreSQL (recommended): ACID-compliant, scalable, with indexing and permission controls.
+
+No PHI stored: only pseudonymized signals; identifiable data remains user-controlled.
+
+Externalized sensitive data: the system can reference identifiers without storing any protected content.
+
+Hash-linking: blockchain event hashes may be referenced for verification without exposing data.
+
+8.0 Summary
+
+The Data Layer provides a structured, analytics-ready foundation for the Future Systems Lab ecosystem.
+It integrates wearable signals, session activity, consent events, reward logic, device metadata, and inventory structures into a consistent relational model.
+This layer forms the bridge between real-world interaction data and blockchain-based auditability, enabling transparent analytics, scalable system evolution, and aligned decentralized governance.
