@@ -1,139 +1,136 @@
-// Rights Reserved, Unlicensed
+<!-- Rights Reserved, Unlicensed -->
 
-# ⌚ Future Systems Lab — Wearables & Sensor Architecture
-Biosensing • On-Chain Consent • Device Identity • NeuroMetrics • Data Pipelines
+# ⌚ Wearables & Sensor Layer  
+Defines the real-time physiological, behavioral, and device-specific inputs that feed the AI engine and on-chain structures across the Future Systems Lab ecosystem.
 
-This Wearables & Sensor Layer defines how Future Systems Lab devices and sensor integrations connect to the blockchain, the data layer, and session-based protocol engines across all projects including InstaPsych, NeuroBalance Watch, HypnoNeuro, and Orthomolecular modules.
+---
 
-# 1. Device Identity & Registration
+# 1.0 Overview  
+The Wearables & Sensor Layer collects multi-modal signals from watches, patches, and mobile sensors, links them to a pseudonymous user ID, processes them off-chain, and anchors event hashes on-chain for verifiability.
 
-## 1.1 Device Identity Model
-Each device receives:
-- DeviceID
-- DeviceType
-- SerialNumber
-- User binding (wallet or DID)
-- Registration timestamp
+This unifies:
+- **Somatic patterns** (HRV, heart rate, tension)
+- **Cognitive-behavioral patterns** (loops, focus, pacing)
+- **Environmental cues** (sound, light, motion)
+- **NeuroBalance Consent signals** (on/off toggles)
 
-## 1.2 Blockchain Registration
-- DeviceRegistered event emitted on-chain
-- DeviceID and hash reference stored
-- Full device profile stored off-chain
-- One device may support multiple sensor streams
+---
 
-## 1.3 Trust Anchors
-- Wallet signature for user → device association
-- DID binding for long-term identity
-- Optional attestation packet from device firmware
+# 2.0 Device Types
 
-# 2. Sensor Modalities
+## 2.1 NeuroBalance Watch  
+- HR / HRV  
+- Breath rate  
+- Movement  
+- Session compliance  
+- Daily sync signatures  
+- WT token eligibility (via UserActivity contract)
 
-## 2.1 Supported Inputs
-- Heart rate
-- HRV
-- EDA (electrodermal activity)
-- Accelerometer data
-- Sleep patterns
-- Breath pacing
-- Dopamine inference scores
-- Serotonin inference scores
-- Cognitive state classifications
-- Stress-response markers
-- Mood stabilization metrics
+## 2.2 Wearable Patch  
+- Dopamine trend estimate  
+- Stress signal proxy  
+- Micro-movement  
+- Session resonance match
 
-## 2.2 Sensor Packet Structure
-- device_id
-- timestamp
-- metric_type
-- value
-- metadata_hash
+## 2.3 Phone-Based Sensors  
+- Touch cadence  
+- Voice steadiness  
+- Cognitive-intensity proxies  
+- App-level interaction states
 
-# 3. Data Flow Architecture
+---
 
-## 3.1 On-Device Processing
-- Minimal filtering
-- Optional smoothing for HR/HRV
-- Frequency-domain transforms for cognitive-state signals
-- Immediate packaging into JSON payloads
+# 3.0 On-Chain Links
 
-## 3.2 Transmission Layer
-- Secure webhook
-- Device → gateway → ingestion endpoint
-- Signed requests
-- Timestamp verification
+Each device routes into:
 
-## 3.3 Ingestion Pipeline
-Steps:
-- Validate payload
-- Hash metadata
-- Bind to device and user
-- Persist to PostgreSQL
-- Emit ActivityLogged on-chain
+### **UserActivity.sol**  
+Address: `0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848`  
+- Sensor events  
+- Sync events  
+- WT reward eligibility  
 
-# 4. NeuroBalance Watch Integration
+### **NeuroBalanceConsent.sol**  
+Address: `0x59bF3605e1e62867Ad880eb5451789290F56E369`  
+- Controls whether device data is used  
+- Controls whether session hashes can be linked  
+- User-controlled toggles
 
-## 4.1 Sensor Mapping
-- HRV → stress/recovery index
-- HeartRate → activation level
-- DopamineEstimate → motivation curve
-- SerotoninEstimate → mood stability
-- Accelerometer → pacing, grounding cues
+### **ComplianceLog.sol**  
+Address: `0xb169383145070fbC19EF972569E6ec35B253a69F`  
+- Event record  
+- Consent enforcement results  
+- Device-level audit trail
 
-## 4.2 On-Chain Components
-- DeviceRegistered
-- ActivityLogged
-- UserActivity relational mapping
-- NFT state upgrades tied to streak consistency
+---
 
-## 4.3 On-Device UX Layer
-- Watch face protocols
-- Sensory cues (haptics/visuals)
-- Mood-regulation fields
-- Frequency-driven entrainment cues
-- Adaptive affirmations
+# 4.0 Data Flow
 
-# 5. InstaPsych Sensor Integration
+```mermaid
+flowchart TD
 
-## 5.1 Symptom-to-Signal Mapping
-- Somatic signals mapped to HRV, EDA, or breathing markers
-- Cognitive sensations mapped to attention/mind-wandering signals
-- Overload patterns → elevated stress index
-- Withdrawn patterns → coherence drop
+    D[Wearable / Patch / Phone Sensor] --> P[Preprocessing Layer]
+    P --> F[Feature Extraction]
+    F --> AI[AI Engine]
 
-## 5.2 Hypnotic UX Integration
-- Frequency-matched sound selection
-- Visual entrainment fields
-- Micro-intervention scripts
-- State-matching reinforcement loops
+    AI --> H[Hash Generator]
+    H --> BC[(Blockchain Layer)]
 
-# 6. Orthomolecular Integration Layer
+    AI --> SQL[(SQL Lab + Sensor Tables)]
+    SQL --> R[Recommendations Engine]
 
-## 6.1 Nutrient-Signal Correlation
-- HRV fluctuations → Mg/B6 need patterns
-- Dopamine signals → tyrosine precursors
-- Serotonin signals → tryptophan/B3/B6 dynamics
-- Stress response → adaptogenic pathways
+    U[User Wallet] --> NB[NeuroBalanceConsent]
+    NB --> BC
+5.0 Preprocessing & Feature Engineering
+5.1 Preprocessing
 
-## 6.2 Mapping to Dashboard
-- Sensor trends combined with nutrient suggestions
-- Longitudinal trends stored off-chain
-- Hash-verified summaries stored on-chain
+Signal cleaning
 
-# 7. Security & Integrity in Sensor Systems
+Noise removal
 
-## 7.1 Anti-Tamper
-- Request-signing keys
-- Duplicate-packet detection
-- Nonce or timestamp mismatch rejections
+Denoising filters
 
-## 7.2 Privacy Protections
-- No raw biometric data on-chain
-- Only hash references stored
-- De-identified packet storage
-- DID-based pseudonyms
+Missing-value imputation
 
-## 7.3 Device Governance
-- Device revocation event
-- Rebinding device to new DID/wallet
-- Streak protection from unauthori
+Normalization
 
+Artifact rejection
+
+5.2 Features Extracted
+
+Time-domain HRV metrics
+
+Breath stability score
+
+Movement vector coherence
+
+Stress flicker index
+
+Interaction cadence
+
+NeuroBalance toggle state
+
+These become the model inputs that correlate with biochemical and behavioral patterns.
+
+6.0 On-Chain Event Mapping
+Action	Contract	Event
+Daily sync	UserActivity	DeviceSynced
+High-quality data streak	UserActivity	StreakAchieved
+Consent toggle change	NeuroBalanceConsent	ConsentUpdated
+AI-recommended alignment	ComplianceLog	AlignmentLogged
+7.0 Privacy Controls
+
+Sensor data stored off-chain
+
+Only event hashes posted on-chain
+
+Wearable → pseudonymized UserID → session hash → blockchain stamp
+
+No raw biometric values ever touch blockchain
+
+Consent gating enforced at device level
+
+8.0 Summary
+
+The Wearables & Sensor Layer forms the behavioral input foundation of the Future Systems Lab ecosystem.
+It connects real-time physiological data with cryptographically verified session records, ensuring accuracy, privacy, and decentralized trust.

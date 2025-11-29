@@ -1,17 +1,9 @@
-cd ~
-cd ~/Future-Systems-Lab/architecture
-
-cat > Blockchain-Layer.md << 'EOF'
 <!-- Rights Reserved, Unlicensed -->
 
 # 🏛️ Blockchain Architecture Layer  
-This layer defines the decentralized logic, governance constraints, auditability, and cross-contract interoperability across the Future Systems Lab ecosystem.
-
----
 
 # 1.0 Overview  
-The blockchain layer coordinates consent, activity logging, session hashing, and tokenomics across the ecosystem.  
-Each contract is verified on Sepolia and designed for transparent, observable behavior.
+The blockchain layer coordinates consent, activity logging, session hashing, and tokenomics across the ecosystem.
 
 ---
 
@@ -20,38 +12,61 @@ Each contract is verified on Sepolia and designed for transparent, observable be
 ## 2.1 Core Governance + Compliance
 
 ### **ComplianceLog**  
+<<<<<<< HEAD
 - **Address:** [`0xb169383145070fbC19EF972569E6ec35B253a69F`](https://eth-sepolia.blockscout.com/address/0xb169383145070fbC19EF972569E6ec35B253a69F)
 
 ### **ConsentPolicy**  
 - **Address:** [`0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E`](https://eth-sepolia.blockscout.com/address/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E)
+=======
+- **Address:** [`0xb169383145070fbC19EF972569E6ec35B253a69F`](https://sepolia.etherscan.io/address/0xb169383145070fbC19EF972569E6ec35B253a69F)
+
+### **ConsentPolicy**  
+- **Address:** [`0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E`](https://sepolia.etherscan.io/address/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E)
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 
 ---
 
 ## 2.2 Session Hashing + Analytics Anchoring
 
 ### **EncryptHealthSessionStore**  
+<<<<<<< HEAD
 - **Address:** [`0x3Be8285F089cb53ed811CF0d8c79c19D8245db09`](https://eth-sepolia.blockscout.com/address/0x3Be8285F089cb53ed811CF0d8c79c19D8245db09)
+=======
+- **Address:** [`0x3Be8285F089cb53ed811CF0d8c79c19D8245db09`](https://sepolia.etherscan.io/address/0x3Be8285F089cb53ed811CF0d8c79c19D8245db09)
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 
 ---
 
 ## 2.3 Wearable + App-Level Consent
 
 ### **NeuroBalanceConsent**  
+<<<<<<< HEAD
 - **Address:** [`0x59bF3605e1e62867Ad880eb5451789290F56E369`](https://eth-sepolia.blockscout.com/address/0x59bF3605e1e62867Ad880eb5451789290F56E369)
+=======
+- **Address:** [`0x59bF3605e1e62867Ad880eb5451789290F56E369`](https://sepolia.etherscan.io/address/0x59bF3605e1e62867Ad880eb5451789290F56E369)
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 
 ---
 
 ## 2.4 Activity Tracking
 
 ### **UserActivity**  
+<<<<<<< HEAD
 - **Address:** [`0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848`](https://eth-sepolia.blockscout.com/address/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848)
+=======
+- **Address:** [`0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848`](https://sepolia.etherscan.io/address/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848)
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 
 ---
 
 ## 2.5 Tokenomics Layer
 
 ### **WellnessToken (ERC-20)**  
+<<<<<<< HEAD
 - **Address:** [`0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC`](https://eth-sepolia.blockscout.com/address/0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC)
+=======
+- **Address:** [`0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC`](https://sepolia.etherscan.io/address/0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC)
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 
 ---
 # 3.0 Inter-Contract Architecture
@@ -70,6 +85,7 @@ flowchart TD
     S --> L
 
     T --> R[Incentive Layer]
+<<<<<<< HEAD
 
 ### Contract Addresses Used in Diagram
 
@@ -173,3 +189,14 @@ This section connects with the Security & Privacy layer:
 # 8.0 Summary  
 The Blockchain Architecture Layer defines the decentralized foundation for identity-linked consent, reward mechanisms, transparent governance, and system-wide data integrity, forming the connective layer of the Future Systems Lab ecosystem.
 
+=======
+Contract Addresses Used in Diagram
+| Contract                  | Address                                                                                                                         |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| EncryptHealthSessionStore | [`0x3Be8285F089cb53ed811CF0d8c79c19D8245db09`](https://sepolia.etherscan.io/address/0x3Be8285F089cb53ed811CF0d8c79c19D8245db09) |
+| ConsentPolicy             | [`0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E`](https://sepolia.etherscan.io/address/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E) |
+| NeuroBalanceConsent       | [`0x59bF3605e1e62867Ad880eb5451789290F56E369`](https://sepolia.etherscan.io/address/0x59bF3605e1e62867Ad880eb5451789290F56E369) |
+| UserActivity              | [`0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848`](https://sepolia.etherscan.io/address/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848) |
+| WellnessToken             | [`0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC`](https://sepolia.etherscan.io/address/0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC) |
+| ComplianceLog             | [`0xb169383145070fbC19EF972569E6ec35B253a69F`](https://sepolia.etherscan.io/address/0xb169383145070fbC19EF972569E6ec35B253a69F) |
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)

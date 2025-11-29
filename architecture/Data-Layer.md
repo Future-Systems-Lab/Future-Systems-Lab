@@ -37,6 +37,10 @@ Tables are designed to map directly to **on-chain events** emitted by:
 ## 2.1 Users  
 Pseudonymized user identity.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 USERS {
 int UserID PK
 string PseudoID
@@ -47,6 +51,11 @@ datetime CreatedAt
 ## 2.2 Practitioners  
 Mapped to decentralized credentials (future DID/VC integration).
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 PRACTITIONERS {
 int PractitionerID PK
 int UserID FK
@@ -58,6 +67,11 @@ int YearsExperience
 ## 2.3 Sessions  
 Stores local metadata + hashed AI session payload.
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 SESSIONS {
 int SessionID PK
 int UserID FK
@@ -72,6 +86,11 @@ int BlockNumber
 ## 2.4 Tokens  
 Off-chain mirror of WellnessToken rewards.
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 TOKENS {
 int TokenID PK
 int UserID FK
@@ -86,6 +105,11 @@ int BlockNumber
 ## 2.5 Devices  
 Wearable + app-linked device identities.
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 DEVICES {
 int DeviceID PK
 int UserID FK
@@ -98,6 +122,11 @@ datetime RegisteredAt
 ## 2.6 Sensor Data  
 Wearable datapoints (HR, mood, sleep, motion, etc.).
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 SENSORDATA {
 int DataID PK
 int DeviceID FK
@@ -110,6 +139,11 @@ float Value
 ## 2.7 Inventory  
 Nonclinical progression/NFT stage mapping.
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 INVENTORY {
 int ItemID PK
 string ItemName
@@ -121,6 +155,11 @@ int Quantity
 ## 2.8 UserActivityRelational  
 Master linkage table joining user, session, device, sensor, and reward events.
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 USERACTIVITYRELATIONAL {
 int RelID PK
 int UserID FK
@@ -164,6 +203,7 @@ erDiagram
     SENSORDATA ||--o{ USERACTIVITYRELATIONAL : "joins"
     INVENTORY ||--o{ USERACTIVITYRELATIONAL : "links"
 
+<<<<<<< HEAD
 4.0 Blockchain → SQL Mapping
 | Blockchain Contract       | Event            | SQL Target             | Purpose                                   |
 | ------------------------- | ---------------- | ---------------------- | ----------------------------------------- |
@@ -189,27 +229,67 @@ All queries avoid PHI and use pseudonymized data only.
 
 5.1 User + Session + Tokens
 
+=======
+</details>
+4.0 Blockchain → SQL Mapping
+Blockchain Contract	Event	SQL Target	Purpose
+EncryptHealthSessionStore	SessionLogged	Sessions.SessionHash	Anchors local sessions to on-chain record
+ConsentPolicy	ConsentUpdated	Users (metadata)	Maps consent state (non-PHI)
+NeuroBalanceConsent	ConsentUpdated	Devices / Users	Wearable permission state
+UserActivity	DeviceLinked	Devices	Registers device activity
+UserActivity	ActivityLogged	UserActivityRelational	High-level activity mapping
+WellnessToken	TokenMinted	Tokens	Reward accounting
+ComplianceLog	All events	all tables via TxHash	Immutable audit trail
+Blockscout Explorer References
+
+https://eth-sepolia.blockscout.com/address/0x3Be8285F089cb53ed811CF0d8c79c19D8245db09
+
+https://eth-sepolia.blockscout.com/address/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E
+
+https://eth-sepolia.blockscout.com/address/0x59bF3605e1e62867Ad880eb5451789290F56E369
+
+https://eth-sepolia.blockscout.com/address/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848
+
+https://eth-sepolia.blockscout.com/address/0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC
+
+https://eth-sepolia.blockscout.com/address/0xb169383145070fbC19EF972569E6ec35B253a69F
+
+5.0 SQL Example Queries
+
+(All queries avoid PHI and use pseudonymized data only.)
+
+5.1 User + Session + Tokens
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 SELECT u.PseudoID, s.Timestamp, t.Amount
 FROM Users u
 JOIN Sessions s ON u.UserID = s.UserID
 JOIN Tokens t ON u.UserID = t.UserID;
 
 5.2 Wearable Metrics
+<<<<<<< HEAD
 
+=======
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 SELECT u.PseudoID, d.DeviceType, sd.Metric, sd.Value
 FROM Users u
 JOIN Devices d ON u.UserID = d.UserID
 JOIN SensorData sd ON d.DeviceID = sd.DeviceID;
 
 5.3 Total Reward Balance
+<<<<<<< HEAD
 
+=======
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 SELECT u.PseudoID, SUM(t.Amount) AS TotalTokens
 FROM Users u
 JOIN Tokens t ON u.UserID = t.UserID
 GROUP BY u.UserID;
 
 5.4 Full Activity Graph
+<<<<<<< HEAD
 
+=======
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 SELECT u.PseudoID, s.Timestamp, t.Amount, d.DeviceType, sd.Metric, i.ItemName
 FROM UserActivityRelational r
 JOIN Users u ON r.UserID = u.UserID
@@ -221,9 +301,15 @@ JOIN Inventory i ON r.ItemID = i.ItemID;
 
 6.0 Off-Chain Storage Standards
 
+<<<<<<< HEAD
 SQLite (demo): portable, embedded
 
 PostgreSQL 17+ (recommended): ACID, indexable, scalable
+=======
+SQLite (demo): lightweight, portable
+
+PostgreSQL 17+ (recommended): ACID-compliant, scalable
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 
 No PHI stored
 
@@ -232,6 +318,12 @@ All sensitive info remains off-chain
 Hash-linking → on-chain immutability without data exposure
 
 7.0 Summary
+<<<<<<< HEAD
+=======
+
+The Data Layer provides a unified, analytics-ready foundation that mirrors decentralized events while maintaining full privacy and compliance.
+It integrates wearable data, session hashing, reward events, consent updates, and progression logic into a traceable, auditable, pseudonymized relational model that supports the entire Future Systems Lab ecosystem.
+>>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
 
 The Data Layer provides a unified, analytics-ready foundation that mirrors decentralized events while maintaining full privacy and compliance.
 It integrates wearable data, session hashing, reward events, consent updates, and progression logic into a traceable, auditable, pseudonymized relational model that supports the entire Future Systems Lab ecosystem.
