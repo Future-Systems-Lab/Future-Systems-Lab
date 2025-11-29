@@ -200,3 +200,28 @@ Contract Addresses Used in Diagram
 | WellnessToken             | [`0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC`](https://sepolia.etherscan.io/address/0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC) |
 | ComplianceLog             | [`0xb169383145070fbC19EF972569E6ec35B253a69F`](https://sepolia.etherscan.io/address/0xb169383145070fbC19EF972569E6ec35B253a69F) |
 >>>>>>> 71150af (Updated Tokenomics model to unified HNT + EHT + WT system)
+
+---
+
+## 🔗 Contract Source Files (GitHub)
+
+| Contract | GitHub Source |
+|---------|---------------|
+| ConsentPolicy.sol | https://github.com/Future-Systems-Lab/Smart-Contracts/blob/main/ConsentPolicy.sol |
+| NeuroBalanceConsent.sol | https://github.com/Future-Systems-Lab/Smart-Contracts/blob/main/NeuroBalanceConsent.sol |
+| EncryptHealthSessionStore.sol | https://github.com/Future-Systems-Lab/Smart-Contracts/blob/main/EncryptHealthSessionStore.sol |
+| UserActivity.sol | https://github.com/Future-Systems-Lab/Smart-Contracts/blob/main/UserActivity.sol |
+| WellnessToken.sol | https://github.com/Future-Systems-Lab/Smart-Contracts/blob/main/WellnessToken.sol |
+| ComplianceLog.sol | https://github.com/Future-Systems-Lab/Smart-Contracts/blob/main/ComplianceLog.sol |
+
+## 🔗 Verified Contract Pages (Sourcify)
+
+Each contract is fully verified on Sourcify:
+
+- ConsentPolicy → https://repo.sourcify.dev/contracts/full_match/11155111/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E/
+- NeuroBalanceConsent → https://repo.sourcify.dev/contracts/full_match/11155111/0x59bF3605e1e62867Ad880eb5451789290F56E369/
+- EncryptHealthSessionStore → https://repo.sourcify.dev/contracts/full_match/11155111/0x3Be8285F089cb53ed811CF0d8c79c19D8245db09/
+- UserActivity → https://repo.sourcify.dev/contracts/full_match/11155111/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848/
+- WellnessToken → https://repo.sourcify.dev/contracts/full_match/11155111/0x18d7C8186dA31a0DF3a4D3EEB96e8cEb70c09DDC/
+- ComplianceLog → https://repo.sourcify.dev/contracts/full_match/11155111/0xb169383145070fbC19EF972569E6ec35B253a69F/
+
