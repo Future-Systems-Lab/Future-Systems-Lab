@@ -79,7 +79,6 @@ flowchart TD
 
     T --> R[Incentive Layer]
 
----
 
 
 # 4.0 Inter-Contract Architecture
@@ -91,7 +90,7 @@ The ecosystem functions through **event-driven interoperability**:
 **Flow:**  
 A recorded session → permission check → reward token mint → potential NFT tier unlock.
 
----
+
 
 # 5.0 Tokenomics Model
 
@@ -108,7 +107,6 @@ A recorded session → permission check → reward token mint → potential NFT 
 - DAO-aligned treasury managed via multi-sig (future state).  
 - All flows are transparent, observable, and recorded on-chain.
 
----
 
 # 6.0 Audit & Security
 
@@ -129,7 +127,6 @@ Every major action emits:
 
 This creates a permanent, queryable audit ledger.
 
----
 
 # 7.0 Compliance Mapping  
 This section connects with the Security & Privacy layer:
@@ -140,7 +137,6 @@ This section connects with the Security & Privacy layer:
 - NFT progression is non-clinical and non-diagnostic  
 - All data used is pseudonymized  
 
----
 
 # 8.0 Summary  
 The Blockchain Architecture Layer defines the decentralized foundation for identity-linked consent, reward mechanisms, transparent governance, and system-wide data integrity, forming the connective layer of the Future Systems Lab ecosystem.
