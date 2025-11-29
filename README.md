@@ -233,3 +233,36 @@ All system architecture files — including Blockchain Layer, Security & Privacy
 🔗 **https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture**
 
 
+
+---
+
+## 🧪 Verification & Reproducibility
+
+Future Systems Lab maintains full reproducibility and verifiability across all prototypes and research modules:
+
+### 🔐 Smart Contract Verification
+All deployed contracts are verified on Sourcify and linked directly from:
+`architecture/Blockchain-Layer.md`
+
+### 🧱 Architecture Documentation
+Every architecture layer (Blockchain, Security & Privacy, Wearables, Data, Full-System) is versioned and stored at:
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture
+
+### 📊 Data Model Reproducibility
+The Data Layer includes:
+- full SQL schema  
+- PostgreSQL-compatible models  
+- Mermaid + PNG ERD diagrams  
+- example analytic queries  
+
+See: `architecture/Data-Layer.md`
+
+### ⚙️ Diagram and Model Versioning
+All PNG diagrams and their live Mermaid source files are tracked under:
+`architecture/diagrams/`
+
+### 📜 Auditability
+ComplianceLog, ConsentPolicy, and UserActivity contracts create immutable, queryable audit trails for sessions, devices, and consent actions.
+
+This guarantees transparent, reproducible outcomes for reviewers, researchers, and auditors.
+
