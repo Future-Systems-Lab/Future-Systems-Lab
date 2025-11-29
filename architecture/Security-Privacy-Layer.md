@@ -1,177 +1,40 @@
 <!-- Rights Reserved, Unlicensed -->
 
-# 🔐 Security & Privacy Layer  
-The Security & Privacy Layer enforces compliance, consent boundaries, encryption, auditability, and pseudonymized data flows across the Future Systems Lab ecosystem.  
-This layer ensures that all decentralized logic aligns with HIPAA, GDPR, and FDA expectations while maintaining a zero-trust architecture.
+# 🛡️ Security & Privacy Layer  
+The Security & Privacy Layer enforces a **zero-trust**, **zero-PHI**, **revocation-first** architecture.  
+It guarantees that every interaction—device, session, consent, or reward—is cryptographically verifiable and mapped to an immutable audit trail.
 
 ---
 
-# 1.0 Purpose  
-The Security & Privacy Layer protects:
+# 1.0 Purpose & Design Principles  
 
-- user consent states  
-- wearable permissions  
-- session hashes  
-- device linkages  
-- activity events  
-- audit records  
-- token reward logic  
-
-All protections use **event-driven enforcement**, **pseudonymization**, and **blockchain-anchored auditability**—ensuring transparent and irreversible logs without storing PHI.
+- No PHI stored on-chain or off-chain  
+- Revocation-first access control  
+- Tamper-proof activity logging  
+- Immutable event-level auditability  
+- Cross-device and cross-app consistency  
+- Pseudonymized analytics linkage  
+- Explicit user-controlled consent states  
 
 ---
 
-# 2.0 Core Principles  
-- **Zero-PHI architecture**: no PHI is ever written on-chain or stored in the database.  
-- **Data minimization**: only pseudonymous signals (hashes, IDs, metrics) are processed.  
-- **User-controlled consent**: fine-grained toggles dictate what data flows are allowed.  
-- **Immutable auditing**: all actions produce tamper-proof logs via `ComplianceLog`.  
-- **Separation of layers**: consent → session → reward → analytics are all isolated.  
-- **Revocation-first design**: GDPR-style reversibility without data deletion risks.  
-- **Zero-trust end-to-end**: assume every component is untrusted unless proven otherwise.  
+# 2.0 Components  
+
+| Layer Component | Purpose |
+|----------------|---------|
+| **ConsentPolicy** | Enforces consent state, revocation, permission boundaries |
+| **NeuroBalanceConsent** | Wearable/app-level permissions (sensors, device actions) |
+| **ComplianceLog** | Immutable audit ledger for all actions |
+| **UserActivity** | Records device actions, cross-app events |
+| **Security Analytics** | Monitors anomalies, fraud, tampering |
 
 ---
 
-# 3.0 Relevant On-Chain Contracts  
-All verification links use **Blockscout** (canonical explorer).
-
-| Contract          | Address | Purpose |
-|------------------|---------|---------|
-| **ConsentPolicy** | https://eth-sepolia.blockscout.com/address/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E | Global consent registry |
-| **NeuroBalanceConsent** | https://eth-sepolia.blockscout.com/address/0x59bF3605e1e62867Ad880eb5451789290F56E369 | Wearables + app-level permissions |
-| **UserActivity** | https://eth-sepolia.blockscout.com/address/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848 | Device-linked activity events |
-| **ComplianceLog** | https://eth-sepolia.blockscout.com/address/0xb169383145070fbC19EF972569E6ec35B253a69F | Immutable audit ledger |
-
----
-
-# 4.0 Security Flow (High-Level)
-<<<<<<< HEAD
-=======
+# 3.0 Security Flow Diagram (Mermaid)
 
 ```mermaid
 flowchart TD
-    U[User Wallet] --> CP[ConsentPolicy]
-    U --> NBC[NeuroBalanceConsent]
-    D[Wearable Device] --> NBC
-    APP[Mobile / Watch App] --> UA[UserActivity]
 
-    CP --> CL[ComplianceLog]
-    NBC --> CL
-    UA --> CL
-
-    CL --> SEC[Security Layer Analytics]
-5.0 Threat Model
->>>>>>> 8150d1a (Add full Security & Privacy Layer architecture)
-
-This layer protects against:
-
-Unauthorized data use (revoked consent, stale permissions)
-
-Cross-device spoofing (fake sensors, replayed activity logs)
-
-Session tampering (altered recommendations or timestamps)
-
-Reward fraud (fake interactions to earn tokens)
-
-Unauthorized access (untrusted apps or compromised devices)
-
-Insecure storage (prevent PHI exposure)
-
-Protection mechanisms include:
-
-ECDSA/EIP-712 typed signatures
-
-Device-specific linking
-
-On-chain event validation
-
-Pseudonymized IDs
-
-Hash anchoring (SHA-256)
-
-Session replay protection
-
-Contract-based allowlists
-
-6.0 Consent Logic
-6.1 Fine-Grained Structure
-
-Consent is broken into:
-
-Wearable Sensors (HR, HRV, sleep, motion, mood)
-
-Session Use (AI generation, hashing, protocol selection)
-
-Activity Tracking (session events, device-linked logs)
-
-Reward Eligibility (token earnings)
-
-6.2 Revocation
-
-Revocation triggers:
-
-Freeze of future activity recordings
-
-Immediate stop of wearable data ingestion
-
-Denial of token issuance
-
-Log entry in ComplianceLog
-
-Update to SQL metadata for analytics blocking
-
-This ensures GDPR Art.7 compliance without requiring deletion of audit artifacts.
-
-7.0 Auditability
-
-Every action produces an immutable record:
-
-Event	Source	SQL Target	Purpose
-ConsentUpdated	ConsentPolicy	Users metadata	Legal consent mapping
-DeviceLinked	UserActivity	Devices	Device identity verification
-ActivityLogged	UserActivity	UserActivityRelational	Behavioral analytics
-SessionLogged	SessionStore	Sessions	Session integrity verification
-TokenMinted	WellnessToken	Tokens	Reward accounting
-ComplianceEntry	ComplianceLog	All tables via TxHash	Full audit ledger
-8.0 Regulatory Alignment
-Standard	Mapping
-HIPAA 164.312	Access control via wallet signatures and contract roles
-HIPAA 164.508	On-chain consent gating (ConsentPolicy.sol)
-GDPR Art.6	Lawful basis through explicit, user-driven consent
-GDPR Art.7	Full revocation support, event-based
-GDPR Art.25	Privacy by design, zero-PHI
-FDA 21 CFR Part 11	Timestamped records, tamper-evident logs
-9.0 Verification Links
-
-Contract Source Files (local)
-
-contracts/ConsentPolicy.sol
-
-contracts/NeuroBalanceConsent.sol
-
-contracts/UserActivity.sol
-
-contracts/ComplianceLog.sol
-
-On-Chain Verification (Blockscout)
-
-ConsentPolicy — https://eth-sepolia.blockscout.com/address/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E
-
-NeuroBalanceConsent — https://eth-sepolia.blockscout.com/address/0x59bF3605e1e62867Ad880eb5451789290F56E369
-
-UserActivity — https://eth-sepolia.blockscout.com/address/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848
-
-ComplianceLog — https://eth-sepolia.blockscout.com/address/0xb169383145070fbC19EF972569E6ec35B253a69F
-
-Diagram Files
-
-architecture/diagrams/security-privacy-layer.png
-
-10.0 Summary
-
-The Security & Privacy Layer enforces a zero-trust, zero-PHI, revocation-first design that ensures transparent, legally aligned, and tamper-proof system integrity across all devices, sessions, and protocols. It protects all consent flows, verifies all device actions, and ensures that every interaction is mapped to a verifiable, immutable audit trail.
-
-flowchart TD
     U[User Wallet] --> CP[ConsentPolicy]
     U --> NBC[NeuroBalanceConsent]
     D[Wearable Device] --> NBC
@@ -183,112 +46,82 @@ flowchart TD
 
     CL --> SEC[Security Layer Analytics]
 
+4.0 Enforcement Model
+Consent Enforcement
+
+All actions gated through ConsentPolicy
+
+Revocation immediately disables data use
+
+Permissions scoped per module (L1/L2/L3, sessions, device actions)
+
+Audit Enforcement
+
+Every contract emits audit events
+
+All actions routed through ComplianceLog
+
+Device Enforcement
+
+Device identity required
+
+Fake/replayed sensor data rejected
+
+Session hashes validated with timestamps
+
+Reward Enforcement
+
+Reward only triggered by valid consent + valid session hash
+
+Prevents farming, dupe events, replay attacks
+
 5.0 Threat Model
 
-This layer protects against:
+The system protects against:
 
-Unauthorized data use (revoked consent, stale permissions)
+Unauthorized data use (revoked or outdated consent)
 
-Cross-device spoofing (fake sensors, replayed activity logs)
+Fake sensor data (device spoofing, replayed logs)
 
-Session tampering (altered recommendations or timestamps)
+Session tampering (modified hashes, timestamps, protocol IDs)
 
 Reward fraud (fake interactions to earn tokens)
 
-Unauthorized access (untrusted apps or compromised devices)
+Unauthorized app access (compromised devices)
 
-Insecure storage (prevent PHI exposure)
+Cross-app replay attacks
 
-Protection mechanisms include:
+Governance manipulation (invalid EHT actions)
 
-ECDSA/EIP-712 typed signatures
+6.0 On-Chain Event Mapping
+| Event               | Contract                  | Security Purpose                 |
+| ------------------- | ------------------------- | -------------------------------- |
+| `ConsentUpdated`    | ConsentPolicy             | Data-use enforcement, revocation |
+| `PermissionUpdated` | NeuroBalanceConsent       | Wearable-level access            |
+| `ActivityLogged`    | UserActivity              | Device/app event verification    |
+| `SessionLogged`     | EncryptHealthSessionStore | Hash-based session verification  |
+| `TokenMinted`       | WellnessToken             | Verified reward issuance         |
+| All Events          | ComplianceLog             | Permanent audit record           |
+7.0 Compliance Alignment
+| Requirement        | Control               | Location               |
+| ------------------ | --------------------- | ---------------------- |
+| HIPAA 164.508      | Consent gating        | ConsentPolicy.sol      |
+| HIPAA 164.312      | Audit controls        | ComplianceLog          |
+| GDPR Art.7         | Explicit revocation   | ConsentPolicy.sol      |
+| GDPR Art.25        | Privacy by design     | Hash-only architecture |
+| FDA 21 CFR Part 11 | Signature equivalents | Blockchain timestamps  |
+8.0 Summary
 
-Device-specific linking
+The Security & Privacy Layer ensures:
 
-On-chain event validation
+All system interactions are consent-bound,
 
-Pseudonymized IDs
+All actions are tamper-proof,
 
-Hash anchoring (SHA-256)
+All device and session events are verifiable,
 
-Session replay protection
+All analytics operate on pseudonymized, zero-PHI data,
 
-Contract-based allowlists
+And every component connects to a unified, immutable audit trail.
 
-6.0 Consent Logic
-6.1 Fine-Grained Structure
-
-Consent is broken into:
-
-Wearable Sensors (HR, HRV, sleep, motion, mood)
-
-Session Use (AI generation, hashing, protocol selection)
-
-Activity Tracking (session events, device-linked logs)
-
-Reward Eligibility (token earnings)
-
-6.2 Revocation
-
-Revocation triggers:
-
-Freeze of future activity recordings
-
-Immediate stop of wearable data ingestion
-
-Denial of token issuance
-
-Log entry in ComplianceLog
-
-Update to SQL metadata for analytics blocking
-
-This ensures GDPR Art.7 compliance without requiring deletion of audit artifacts.
-
-7.0 Auditability
-
-Every action produces an immutable record:
-
-Event	Source	SQL Target	Purpose
-ConsentUpdated	ConsentPolicy	Users metadata	Legal consent mapping
-DeviceLinked	UserActivity	Devices	Device identity verification
-ActivityLogged	UserActivity	UserActivityRelational	Behavioral analytics
-SessionLogged	SessionStore	Sessions	Session integrity verification
-TokenMinted	WellnessToken	Tokens	Reward accounting
-ComplianceEntry	ComplianceLog	All tables via TxHash	Full audit ledger
-8.0 Regulatory Alignment
-Standard	Mapping
-HIPAA 164.312	Access control via wallet signatures and contract roles
-HIPAA 164.508	On-chain consent gating (ConsentPolicy.sol)
-GDPR Art.6	Lawful basis through explicit, user-driven consent
-GDPR Art.7	Full revocation support, event-based
-GDPR Art.25	Privacy by design, zero-PHI
-FDA 21 CFR Part 11	Timestamped records, tamper-evident logs
-9.0 Verification Links
-
-Contract Source Files (local)
-
-contracts/ConsentPolicy.sol
-
-contracts/NeuroBalanceConsent.sol
-
-contracts/UserActivity.sol
-
-contracts/ComplianceLog.sol
-
-On-Chain Verification (Blockscout)
-
-ConsentPolicy — https://eth-sepolia.blockscout.com/address/0x75DbA8924AA975Ea0Da46989D1348BC756fF1c4E
-
-NeuroBalanceConsent — https://eth-sepolia.blockscout.com/address/0x59bF3605e1e62867Ad880eb5451789290F56E369
-
-UserActivity — https://eth-sepolia.blockscout.com/address/0x2cc949E7C4e8Ab0ec4F35dAf251D5c2C8a2bA848
-
-ComplianceLog — https://eth-sepolia.blockscout.com/address/0xb169383145070fbC19EF972569E6ec35B253a69F
-
-Diagram Files
-
-architecture/diagrams/security-privacy-layer.png
-
-10.0 Summary
-
-The Security & Privacy Layer enforces a zero-trust, zero-PHI, revocation-first design that ensures transparent, legally aligned, and tamper-proof system integrity across all devices, sessions, and protocols. It protects all consent flows, verifies all device actions, and ensures that every interaction is mapped to a verifiable, immutable audit trail.
+This layer forms the foundation of trust for the entire Future Systems Lab ecosystem.
