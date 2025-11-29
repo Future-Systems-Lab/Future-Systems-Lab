@@ -137,3 +137,26 @@ Location: /architecture/Wearables-Sensor-Layer.md
 The full architecture integrates consent, identity, devices, rewards, and analytics into a single verifiable chain of trust.
 This diagram is the top-level blueprint for all future partners, auditors, and researchers.
 
+
+---
+
+## 🔗 Architecture Layer References
+
+### Blockchain Layer  
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Blockchain-Layer.md
+
+### Security & Privacy Layer  
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Security-Privacy-Layer.md
+
+### Wearables & Sensor Layer  
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Wearables-Sensor-Layer.md
+
+### Data Layer  
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Data-Layer.md
+
+### System Diagram (PNG)
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/diagrams/full-system-architecture.png
+
+### Architecture Directory Root
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture
+
