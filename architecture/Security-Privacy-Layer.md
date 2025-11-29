@@ -46,7 +46,7 @@ All verification links use **Blockscout** (canonical explorer).
 
 # 4.0 Security Flow (High-Level)
 
-```mermaid
+
 flowchart TD
     U[User Wallet] --> CP[ConsentPolicy]
     U --> NBC[NeuroBalanceConsent]
@@ -58,6 +58,7 @@ flowchart TD
     UA --> CL
 
     CL --> SEC[Security Layer Analytics]
+
 5.0 Threat Model
 
 This layer protects against:
