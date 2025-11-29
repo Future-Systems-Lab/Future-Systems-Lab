@@ -1,3 +1,7 @@
+cd ~
+cd ~/Future-Systems-Lab/architecture
+
+cat > Blockchain-Layer.md << 'EOF'
 <!-- Rights Reserved, Unlicensed -->
 
 # 🏛️ Blockchain Architecture Layer  
@@ -62,18 +66,20 @@ Each contract is verified on Sepolia and designed for transparent, observable be
 ```mermaid
 flowchart TD
 
-    U[User Wallet<br>MetaMask] --> S[EncryptHealthSessionStore<br>0x3Be82...db09]
-    U --> C1[ConsentPolicy<br>0x75Db...F1c4E]
-    U --> C2[NeuroBalanceConsent<br>0x59bF...E369]
-    U --> A[UserActivity<br>0x2cc9...A848]
-    U --> T[WellnessToken (ERC-20)<br>0x18d7...9DDC]
+    U[User Wallet] --> S[EncryptHealthSessionStore\n0x3Be82...db09]
+    U --> C1[ConsentPolicy\n0x75Db...F1c4E]
+    U --> C2[NeuroBalanceConsent\n0x59bF...E369]
+    U --> A[UserActivity\n0x2cc9...A848]
+    U --> T[WellnessToken ERC20\n0x18d7...9DDC]
 
-    C1 --> L[ComplianceLog<br>0xb169...a69F]
+    C1 --> L[ComplianceLog\n0xb169...a69F]
     C2 --> L
     A --> L
     S --> L
 
-    T --> R[(Incentive Layer)]
+    T --> R[Incentive Layer]
+
+---
 
 
 # 4.0 Inter-Contract Architecture
