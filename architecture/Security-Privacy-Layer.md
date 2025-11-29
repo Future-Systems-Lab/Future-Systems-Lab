@@ -45,52 +45,48 @@ flowchart TD
 
     CL --> SEC[Security Layer Analytics]
 
-4.0 Enforcement Model
-Consent Enforcement
+## 4.0 Enforcement Model
 
-All actions gated through ConsentPolicy
+### **Consent Enforcement**
+- All actions gated through **ConsentPolicy**
+- Revocation immediately disables all data use
+- Permissions scoped per module (L1 / L2 / L3, sessions, device actions)
 
-Revocation immediately disables data use
+### **Audit Enforcement**
+- Every contract emits audit events  
+- All actions routed through **ComplianceLog**  
+- Immutable ledger ensures traceability and tamper resistance  
 
-Permissions scoped per module (L1/L2/L3, sessions, device actions)
+### **Device Enforcement**
+- Device identity is required for all data ingestion  
+- Fake or replayed sensor data is rejected  
+- Session hashes validated with timestamps  
 
-Audit Enforcement
+### **Session Integrity Enforcement**
+- Hashes must match the session anchor in `EncryptHealthSessionStore`  
+- Timestamp and block number must be valid  
+- Prevents tampering, mutation, or replay
 
-Every contract emits audit events
+### **Reward Enforcement**
+- Rewards only trigger if:  
+  1. **Consent is valid**  
+  2. **Session hash is valid**  
+  3. **Device identity is valid**  
+- Prevents farming, duplicate submissions, and replay attacks  
 
-All actions routed through ComplianceLog
+---
 
-Device Enforcement
-
-Device identity required
-
-Fake/replayed sensor data rejected
-
-Session hashes validated with timestamps
-
-Reward Enforcement
-
-Reward only triggered by valid consent + valid session hash
-
-Prevents farming, dupe events, replay attacks
-
-5.0 Threat Model
+## 5.0 Threat Model
 
 The system protects against:
 
-Unauthorized data use (revoked or outdated consent)
-
-Fake sensor data (device spoofing, replayed logs)
-
-Session tampering (modified hashes, timestamps, protocol IDs)
-
-Reward fraud (fake interactions to earn tokens)
-
-Unauthorized app access (compromised devices)
-
-Cross-app replay attacks
-
-Governance manipulation (invalid EHT actions)
+- **Unauthorized data use** (revoked or outdated consent)  
+- **Fake or spoofed sensor data** (device impersonation, replayed logs)  
+- **Session tampering** (modified hashes, timestamps, or protocol IDs)  
+- **Reward fraud** (forced events, dupes, replay attacks)  
+- **Unauthorized app access** (compromised device, untrusted app)  
+- **Cross-app replay attacks**  
+- **Governance manipulation** (invalid or unauthorized EHT actions)
 
 6.0 On-Chain Event Mapping
 | Event               | Contract                  | Security Purpose                 |
@@ -109,18 +105,15 @@ Governance manipulation (invalid EHT actions)
 | GDPR Art.7         | Explicit revocation   | ConsentPolicy.sol      |
 | GDPR Art.25        | Privacy by design     | Hash-only architecture |
 | FDA 21 CFR Part 11 | Signature equivalents | Blockchain timestamps  |
-8.0 Summary
+
+## 8.0 Summary
 
 The Security & Privacy Layer ensures:
 
-All system interactions are consent-bound,
+- All system interactions are **consent-bound**  
+- All actions are **tamper-proof**  
+- All device and session events are **verifiable**  
+- All analytics operate on **pseudonymized, zero-PHI data**  
+- Every component connects to a **unified, immutable audit trail**
 
-All actions are tamper-proof,
-
-All device and session events are verifiable,
-
-All analytics operate on pseudonymized, zero-PHI data,
-
-And every component connects to a unified, immutable audit trail.
-
-This layer forms the foundation of trust for the entire Future Systems Lab ecosystem.
+This layer forms the foundation of **trust, integrity, and compliance** for the entire Future Systems Lab ecosystem.
