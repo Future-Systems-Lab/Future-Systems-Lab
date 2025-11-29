@@ -224,8 +224,12 @@ https://repo.sourcify.dev/11155111/
 
 ---
 
-# 📁 Architecture Documentation  
-All system architecture files are located under:
+---
 
-https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture
+# 🏗️ Architecture Documentation
+
+All system architecture files — including Blockchain Layer, Security & Privacy, Wearables & Sensor Layer, Data Layer, and the Full System Diagram — are located here:
+
+🔗 **https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture**
+
 
