@@ -134,3 +134,18 @@ Consent gating enforced at device level
 
 The Wearables & Sensor Layer forms the behavioral input foundation of the Future Systems Lab ecosystem.
 It connects real-time physiological data with cryptographically verified session records, ensuring accuracy, privacy, and decentralized trust.
+
+---
+
+## 🔗 Wearables Architecture References
+
+### Diagrams Directory
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture/diagrams
+
+### Architecture Root Directory
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture
+
+### Future Sensor Specification Files
+(Future update) Sensor pattern tables and hardware profiles will be stored here:
+https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture/wearables
+
