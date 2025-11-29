@@ -1,0 +1,28 @@
+site_name: Future Systems Lab Documentation
+site_description: Digital Health • Analytics • Blockchain Security
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: lime
+    - scheme: slate
+      primary: teal
+      accent: lime
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.annotate
+    - content.code.copy
+    - navigation.top
+repo_url: https://github.com/Future-Systems-Lab/Future-Systems-Lab
+
+nav:
+  - Home: README.md
+  - Architecture:
+      - Blockchain Layer: architecture/Blockchain-Layer.md
+      - Security & Privacy Layer: architecture/Security-Privacy-Layer.md
+      - Wearables & Sensor Layer: architecture/Wearables-Sensor-Layer.md
+      - Data Layer: architecture/Data-Layer.md
+      - Full System Diagram: architecture/Full-System-Architecture.md
+  - Diagrams: architecture/diagrams/
