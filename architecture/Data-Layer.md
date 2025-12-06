@@ -1,40 +1,40 @@
 <!-- Rights Reserved, Unlicensed -->
 
-# 🗂️ Data Layer Architecture  
-This layer defines the off-chain relational model, event ingestion logic, blockchain-event mapping, and analytics foundation for the Future Systems Lab ecosystem.  
+# 🗂️ Data Layer Architecture
+This layer defines the off-chain relational model, event ingestion logic, blockchain-event mapping, and analytics foundation for the Future Systems Lab ecosystem.
 All data is **pseudonymized**, **non-PHI**, and designed for zero-trust interoperability with the Blockchain Architecture Layer.
 
 ---
 
-# 1.0 Purpose  
+# 1.0 Purpose
 The Data Layer provides a structured, queryable environment for:
 
-- pseudonymized user activity  
-- session hashes (SHA-256)  
-- device metadata + wearable datapoints  
-- token reward events  
-- session/consent/compliance actions  
-- NFT/nonclinical progression metadata  
-- analytics + reporting  
+- pseudonymized user activity
+- session hashes (SHA-256)
+- device metadata + wearable datapoints
+- token reward events
+- session/consent/compliance actions
+- NFT/nonclinical progression metadata
+- analytics + reporting
 
-No protected health information (PHI) is stored.  
+No protected health information (PHI) is stored.
 All sensitive information remains off-chain and externalized.
 
 ---
 
-# 2.0 Relational Schema (SQLite / PostgreSQL)  
+# 2.0 Relational Schema (SQLite / PostgreSQL)
 The schema supports both demo deployments (SQLite) and scalable production (PostgreSQL 17+).
 
 Tables are designed to map directly to **on-chain events** emitted by:
 
-- `EncryptHealthSessionStore`  
-- `ConsentPolicy`  
-- `NeuroBalanceConsent`  
-- `UserActivity`  
-- `WellnessToken`  
-- `ComplianceLog`  
+- `EncryptHealthSessionStore`
+- `ConsentPolicy`
+- `NeuroBalanceConsent`
+- `UserActivity`
+- `WellnessToken`
+- `ComplianceLog`
 
-## 2.1 Users  
+## 2.1 Users
 Pseudonymized user identity.
 
 <<<<<<< HEAD
@@ -48,7 +48,7 @@ datetime CreatedAt
 }
 
 
-## 2.2 Practitioners  
+## 2.2 Practitioners
 Mapped to decentralized credentials (future DID/VC integration).
 
 <<<<<<< HEAD
@@ -64,7 +64,7 @@ int YearsExperience
 }
 
 
-## 2.3 Sessions  
+## 2.3 Sessions
 Stores local metadata + hashed AI session payload.
 
 <<<<<<< HEAD
@@ -83,7 +83,7 @@ int BlockNumber
 }
 
 
-## 2.4 Tokens  
+## 2.4 Tokens
 Off-chain mirror of WellnessToken rewards.
 
 <<<<<<< HEAD
@@ -102,7 +102,7 @@ int BlockNumber
 }
 
 
-## 2.5 Devices  
+## 2.5 Devices
 Wearable + app-linked device identities.
 
 <<<<<<< HEAD
@@ -119,7 +119,7 @@ datetime RegisteredAt
 }
 
 
-## 2.6 Sensor Data  
+## 2.6 Sensor Data
 Wearable datapoints (HR, mood, sleep, motion, etc.).
 
 <<<<<<< HEAD
@@ -136,7 +136,7 @@ float Value
 }
 
 
-## 2.7 Inventory  
+## 2.7 Inventory
 Nonclinical progression/NFT stage mapping.
 
 <<<<<<< HEAD
@@ -152,7 +152,7 @@ int Quantity
 }
 
 
-## 2.8 UserActivityRelational  
+## 2.8 UserActivityRelational
 Master linkage table joining user, session, device, sensor, and reward events.
 
 <<<<<<< HEAD
@@ -343,4 +343,3 @@ https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture
 
 ### SQL Schema Reference
 Schema is defined directly inside this file under **Relational Schema** and matches the on-chain event mappings.
-

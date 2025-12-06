@@ -1,0 +1,41 @@
+flowchart TD
+
+    DeviceSensors["Wearable Sensors (HRV, Motion, Temp)"]
+    DeviceHub["Device Hub (Signal Routing)"]
+    DataIngest["Edge Data Ingestion"]
+    Preprocess["Preprocessing (Filtering, Normalization)"]
+    PatternMap["Pattern Mapping Engine"]
+    SessionLink["Session Link → Wallet"]
+    Firmware["Device Firmware"]
+    SecureChannel["Secure BLE / HTTPS"]
+    DeviceRegistry["Wearables Device Registry"]
+    IAM["IAM Roles & Policies"]
+    ComplianceLog["ComplianceLog Contract"]
+    ConsentCheck["Consent Policy Check"]
+    ConsentPolicy["On-Chain ConsentPolicy Contract"]
+    AccessCtrl["Access Control Decision"]
+    EncryptStore["Encrypted Sensor Store (DynamoDB)"]
+    KMS["AWS KMS Encryption Keys"]
+    GovernanceView["Governance & Compliance Monitoring"]
+
+    DeviceSensors --> DeviceHub
+    DeviceHub --> DataIngest
+    DataIngest --> Preprocess
+    Preprocess --> PatternMap
+    PatternMap --> SessionLink
+
+    Firmware --> SecureChannel
+    SecureChannel --> DeviceHub
+
+    DeviceRegistry --> IAM
+    DeviceRegistry --> ComplianceLog
+    DeviceRegistry --> SessionLink
+
+    PatternMap --> ConsentCheck
+    ConsentCheck --> ConsentPolicy
+    ConsentPolicy --> AccessCtrl
+
+    SessionLink --> EncryptStore
+    EncryptStore --> KMS
+
+    ComplianceLog --> GovernanceView

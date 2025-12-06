@@ -1,24 +1,24 @@
 <!-- Rights Reserved, Unlicensed -->
 
-# 🛡️ Security & Privacy Layer  
-The Security & Privacy Layer enforces a **zero-trust**, **zero-PHI**, **revocation-first** architecture.  
+# 🛡️ Security & Privacy Layer
+The Security & Privacy Layer enforces a **zero-trust**, **zero-PHI**, **revocation-first** architecture.
 It guarantees that every interaction—device, session, consent, or reward—is cryptographically verifiable and mapped to an immutable audit trail.
 
 ---
 
-# 1.0 Purpose & Design Principles  
+# 1.0 Purpose & Design Principles
 
-- No PHI stored on-chain or off-chain  
-- Revocation-first access control  
-- Tamper-proof activity logging  
-- Immutable event-level auditability  
-- Cross-device and cross-app consistency  
-- Pseudonymized analytics linkage  
-- Explicit user-controlled consent states  
+- No PHI stored on-chain or off-chain
+- Revocation-first access control
+- Tamper-proof activity logging
+- Immutable event-level auditability
+- Cross-device and cross-app consistency
+- Pseudonymized analytics linkage
+- Explicit user-controlled consent states
 
 ---
 
-# 2.0 Components  
+# 2.0 Components
 
 | Layer Component | Purpose |
 |----------------|---------|
@@ -53,26 +53,26 @@ flowchart TD
 - Permissions scoped per module (L1 / L2 / L3, sessions, device actions)
 
 ### **Audit Enforcement**
-- Every contract emits audit events  
-- All actions routed through **ComplianceLog**  
-- Immutable ledger ensures traceability and tamper resistance  
+- Every contract emits audit events
+- All actions routed through **ComplianceLog**
+- Immutable ledger ensures traceability and tamper resistance
 
 ### **Device Enforcement**
-- Device identity is required for all data ingestion  
-- Fake or replayed sensor data is rejected  
-- Session hashes validated with timestamps  
+- Device identity is required for all data ingestion
+- Fake or replayed sensor data is rejected
+- Session hashes validated with timestamps
 
 ### **Session Integrity Enforcement**
-- Hashes must match the session anchor in `EncryptHealthSessionStore`  
-- Timestamp and block number must be valid  
+- Hashes must match the session anchor in `EncryptHealthSessionStore`
+- Timestamp and block number must be valid
 - Prevents tampering, mutation, or replay
 
 ### **Reward Enforcement**
-- Rewards only trigger if:  
-  1. **Consent is valid**  
-  2. **Session hash is valid**  
-  3. **Device identity is valid**  
-- Prevents farming, duplicate submissions, and replay attacks  
+- Rewards only trigger if:
+  1. **Consent is valid**
+  2. **Session hash is valid**
+  3. **Device identity is valid**
+- Prevents farming, duplicate submissions, and replay attacks
 
 ---
 
@@ -80,12 +80,12 @@ flowchart TD
 
 The system protects against:
 
-- **Unauthorized data use** (revoked or outdated consent)  
-- **Fake or spoofed sensor data** (device impersonation, replayed logs)  
-- **Session tampering** (modified hashes, timestamps, or protocol IDs)  
-- **Reward fraud** (forced events, dupes, replay attacks)  
-- **Unauthorized app access** (compromised device, untrusted app)  
-- **Cross-app replay attacks**  
+- **Unauthorized data use** (revoked or outdated consent)
+- **Fake or spoofed sensor data** (device impersonation, replayed logs)
+- **Session tampering** (modified hashes, timestamps, or protocol IDs)
+- **Reward fraud** (forced events, dupes, replay attacks)
+- **Unauthorized app access** (compromised device, untrusted app)
+- **Cross-app replay attacks**
 - **Governance manipulation** (invalid or unauthorized EHT actions)
 
 ---
@@ -119,10 +119,10 @@ The system protects against:
 
 The Security & Privacy Layer ensures:
 
-- All system interactions are **consent-bound**  
-- All actions are **tamper-proof**  
-- All device and session events are **verifiable**  
-- All analytics operate on **pseudonymized, zero-PHI data**  
+- All system interactions are **consent-bound**
+- All actions are **tamper-proof**
+- All device and session events are **verifiable**
+- All analytics operate on **pseudonymized, zero-PHI data**
 - Every component connects to a **unified, immutable audit trail**
 
 This layer forms the foundation of **trust, integrity, and compliance** for the entire Future Systems Lab ecosystem.
@@ -145,4 +145,3 @@ https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture
 ### Future Security Diagram (PNG)
 (Will be added after final diagram export)
 https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture/diagrams
-

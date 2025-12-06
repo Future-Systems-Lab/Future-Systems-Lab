@@ -1,0 +1,61 @@
+flowchart TD
+
+    IAM["IAM Roles & Policies"]
+    KMS["AWS KMS Encryption Keys"]
+    Secrets["Secrets Manager"]
+    ConsentPolicy["On-Chain ConsentPolicy Contract"]
+    ComplianceLog["ComplianceLog Contract"]
+    APIGW["API Gateway"]
+    LambdaSec["Lambda Execution Role Boundaries"]
+    DynamoDB["DynamoDB Tables"]
+    S3Bucket["S3 Buckets"]
+    BlockPublic["Block Public Access"]
+    AccessLogs["S3 Access Logs"]
+    MetaMask["MetaMask Wallet Auth"]
+    DIDFlow["EIP-712 Signature Verification"]
+    DeviceRegistry["Wearables Device Registry"]
+    CloudTrail["CloudTrail Logs"]
+    OPA["OPA / Rego Policies"]
+    PolicyEnforcement["Policy Enforcement Layer"]
+    AuthZ["Authorization Layer"]
+    EncryptAtRest["Data Encryption at Rest"]
+    AccessCtrl["Granular Access Control"]
+    AuditTrail["Immutable Consent Audit Trail"]
+    RequestValidation["Schema Validation"]
+    RateLimit["Throttle & Rate Limits"]
+    LeastPrivilege["Least-Privilege Functions"]
+    GovernanceView["Governance & Compliance Monitoring"]
+
+    IAM --> AuthZ
+    KMS --> EncryptAtRest
+    Secrets --> AccessCtrl
+
+    ConsentPolicy --> AccessCtrl
+    ConsentPolicy --> AuditTrail
+    ComplianceLog --> AuditTrail
+
+    APIGW --> RequestValidation
+    APIGW --> RateLimit
+
+    LambdaSec --> AuthZ
+    LambdaSec --> LeastPrivilege
+
+    DynamoDB --> EncryptAtRest
+    S3Bucket --> EncryptAtRest
+    S3Bucket --> BlockPublic
+    BlockPublic --> AccessLogs
+
+    MetaMask --> DIDFlow
+    DIDFlow --> AuthZ
+
+    DeviceRegistry --> IAM
+    DeviceRegistry --> ComplianceLog
+
+    CloudTrail --> AuditTrail
+
+    OPA --> PolicyEnforcement
+    PolicyEnforcement --> IAM
+    PolicyEnforcement --> APIGW
+    PolicyEnforcement --> LambdaSec
+
+    AuditTrail --> GovernanceView

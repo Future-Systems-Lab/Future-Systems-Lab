@@ -1,18 +1,18 @@
 <!-- Rights Reserved, Unlicensed -->
 
-# 🏗️ Full System Architecture  
+# 🏗️ Full System Architecture
 This document unifies the **Wearables Layer**, **App Layer**, **Data Layer**, and **Blockchain Layer** into one complete end-to-end architecture for the Future Systems Lab ecosystem.
 
 ---
 
-# 1.0 Overview  
+# 1.0 Overview
 The system operates as a **modular, decentralized digital-health stack**:
 
-- Wearables capture signals and consented metrics  
-- Apps process sensations, sessions, micro-protocols  
-- Data Layer stores pseudonymized records  
-- Blockchain Layer anchors the final state (hashes, tokens, consent, compliance)  
-- ComplianceLog creates a universal immutable audit trail  
+- Wearables capture signals and consented metrics
+- Apps process sensations, sessions, micro-protocols
+- Data Layer stores pseudonymized records
+- Blockchain Layer anchors the final state (hashes, tokens, consent, compliance)
+- ComplianceLog creates a universal immutable audit trail
 
 ---
 
@@ -45,7 +45,7 @@ flowchart TD
     D2[(Sensor Data)]
     D3[(UserActivityRelational)]
     D4[(Tokens Mirror)]
-    
+
     D1 --> BC2
     D2 --> BC2
     D3 --> BC2
@@ -169,4 +169,3 @@ Reviewing audit timestamps
 The full Future Systems Lab ecosystem is a closed-loop, consent-governed, analytics-driven digital-health architecture.
 
 It unites wearable signals, session generation, reward logic, consent, compliance, and blockchain immutability into one coherent system.
-

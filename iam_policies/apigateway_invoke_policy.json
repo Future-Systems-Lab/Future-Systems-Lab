@@ -1,0 +1,14 @@
+// Rights Reserved, Unlicensed
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowInvoke",
+      "Effect": "Allow",
+      "Action": [
+        "execute-api:Invoke"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

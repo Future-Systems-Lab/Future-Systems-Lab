@@ -1,14 +1,43 @@
-site_name: Future Systems Lab Docs
-theme:
-  name: material
-  palette:
-    primary: blue
-    accent: teal
+// Rights Reserved, Unlicensed
+
+site_name: EncryptHealth Documentation
+site_url: https://future-systems-lab.github.io/EncryptHealth
 
 nav:
-  - Overview: docs/index.md
+  - Home: docs/index.md
   - Architecture:
-      - Blockchain Layer: architecture/Blockchain-Layer.md
-      - Security & Privacy Layer: architecture/Security-Privacy-Layer.md
-      - Data Layer: architecture/Data-Layer.md
-      - Wearables & Sensor Layer: architecture/Wearables-Sensor-Layer.md
+      - Overview: docs/architecture.md
+      - Blockchain: docs/blockchain.md
+      - Security & Privacy: docs/security.md
+      - Wearables: docs/wearables.md
+      - Full System Diagram: docs/full_system.md
+  - Governance:
+      - Overview: docs/governance.md
+      - Policies (Rego): docs/policies_rego.md
+      - Terraform Governance: docs/policies_terraform.md
+  - Verification:
+      - Reproducibility: docs/reproducibility.md
+      - Contract Verification: docs/verification_contract.md
+      - Session Hash Pipeline: docs/session_pipeline.md
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.expand
+    - navigation.sections
+    - content.code.copy
+    - content.tabs.link
+  palette:
+    primary: teal
+    accent: amber
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - admonition
+  - codehilite
+  - pymdownx.arithmatex
+  - pymdownx.superfences
+  - pymdownx.details
+  - footnotes

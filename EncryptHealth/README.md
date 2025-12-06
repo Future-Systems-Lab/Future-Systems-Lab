@@ -1,0 +1,1 @@
+[![Governance Scan](https://github.com/Future-Systems-Lab/EncryptHealth/actions/workflows/governance-scan.yml/badge.svg)](https://github.com/Future-Systems-Lab/EncryptHealth/actions/workflows/governance-scan.yml)

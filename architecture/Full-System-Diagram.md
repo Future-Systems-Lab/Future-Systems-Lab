@@ -55,5 +55,3 @@ classDef chain fill:#e5f5ff,stroke:#444,stroke-width:1px;
 classDef contract fill:#e8e8e8,stroke:#444,stroke-width:1px;
 classDef analytics fill:#f0eaff,stroke:#444,stroke-width:1px;
 classDef ui fill:#f9f9f9,stroke:#444,stroke-width:1px;
-
-

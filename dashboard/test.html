@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Session Test</title>
+</head>
+<body>
+  <h1>AI → Blockchain Test</h1>
+  <button id="run">Run Test</button>
+  <pre id="output"></pre>
+
+  <script type="module">
+    import { submitAISession } from "./js/submit-session.js";
+
+    document.getElementById("run").onclick = async () => {
+      const result = await submitAISession({
+        stress_level: 5,
+        magnesium: 1.2,
+        b6: 2.0,
+        glutamate: 9
+      });
+      document.getElementById("output").textContent = JSON.stringify(result, null, 2);
+    };
+  </script>
+</body>
+</html>

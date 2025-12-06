@@ -4,8 +4,8 @@
   <img src="../assets/future-systems-lab-header.png" width="1000">
 </p>
 
-# 🧩 Full System Architecture  
-Future Systems Lab integrates blockchain, wearables, consent, analytics, and wellness protocols into a unified digital-health ecosystem.  
+# 🧩 Full System Architecture
+Future Systems Lab integrates blockchain, wearables, consent, analytics, and wellness protocols into a unified digital-health ecosystem.
 This document provides the end-to-end architecture for recruiters, engineers, researchers, and academic reviewers.
 
 ---
@@ -14,16 +14,16 @@ This document provides the end-to-end architecture for recruiters, engineers, re
 
 The ecosystem consists of four interoperable layers:
 
-1. **Blockchain Layer**  
+1. **Blockchain Layer**
    Smart contracts for consent, sessions, rewards, device identity, and compliance logging.
 
-2. **Security & Privacy Layer**  
+2. **Security & Privacy Layer**
    Zero-trust, zero-PHI, revocation-first model enforcing auditability and legal compliance.
 
-3. **Wearables & Sensor Layer**  
+3. **Wearables & Sensor Layer**
    NeuroBalance Watch + other sensory devices providing structured, pseudonymized telemetry.
 
-4. **Data & Analytics Layer**  
+4. **Data & Analytics Layer**
    PostgreSQL + SQL models mirroring on-chain events for dashboards, queries, and system intelligence.
 
 ---
@@ -142,16 +142,16 @@ This diagram is the top-level blueprint for all future partners, auditors, and r
 
 ## 🔗 Architecture Layer References
 
-### Blockchain Layer  
+### Blockchain Layer
 https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Blockchain-Layer.md
 
-### Security & Privacy Layer  
+### Security & Privacy Layer
 https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Security-Privacy-Layer.md
 
-### Wearables & Sensor Layer  
+### Wearables & Sensor Layer
 https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Wearables-Sensor-Layer.md
 
-### Data Layer  
+### Data Layer
 https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Data-Layer.md
 
 ### System Diagram (PNG)
@@ -159,4 +159,3 @@ https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/
 
 ### Architecture Directory Root
 https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/architecture
-

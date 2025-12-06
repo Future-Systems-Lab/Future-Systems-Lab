@@ -1,0 +1,54 @@
+flowchart TD
+
+    User["User"]
+    MetaMask["MetaMask Wallet<br/>EIP-712 Signature"]
+
+    Frontend["Next.js Frontend<br/>HypnoNeuro / EncryptHealth Apps"]
+    DeviceApp["Wearables App<br/>(NeuroBalance Watch)"]
+
+    AIEngine["AI Engine<br/>Stress · Nutrient · Pattern Mapping"]
+    SessionHash["AI Session Hash Generator"]
+
+    SessionStore["EncryptHealthSessionStore<br/>Sepolia Contract"]
+    ConsentPolicy["ConsentPolicy<br/>On-Chain Contract"]
+    ComplianceLog["ComplianceLog<br/>On-Chain Contract"]
+    WellnessToken["WellnessToken<br/>ERC-20 Contract"]
+
+    APIGW["API Gateway"]
+    Lambda["Lambda Functions"]
+    Dynamo["DynamoDB (Encrypted Sensor Store)"]
+    S3["S3 Buckets (COA, Uploads)"]
+    KMS["AWS KMS Encryption Keys"]
+    IAM["IAM Roles & Policies"]
+    OPA["OPA / Rego Policies"]
+    CloudTrail["CloudTrail Logs"]
+
+    GovMonitor["Governance & Compliance Monitoring"]
+    Audit["Immutable Audit Trail"]
+
+    User --> MetaMask --> Frontend
+    DeviceApp --> Frontend
+
+    Frontend --> AIEngine
+    AIEngine --> SessionHash
+    SessionHash --> Frontend
+
+    Frontend --> SessionStore
+    Frontend --> ConsentPolicy
+    Frontend --> ComplianceLog
+    Frontend --> WellnessToken
+
+    Frontend --> APIGW --> Lambda
+    Lambda --> Dynamo
+    Lambda --> S3
+    Dynamo --> KMS
+    S3 --> KMS
+
+    OPA --> IAM
+    OPA --> APIGW
+    OPA --> Lambda
+
+    CloudTrail --> Audit
+    ComplianceLog --> Audit
+    ConsentPolicy --> Audit
+    Audit --> GovMonitor

@@ -1,0 +1,13 @@
+[
+  {
+    "inputs": [
+      { "internalType": "address", "name": "user", "type": "address" },
+      { "internalType": "string", "name": "eventType", "type": "string" },
+      { "internalType": "string", "name": "sessionHash", "type": "string" }
+    ],
+    "name": "recordEvent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

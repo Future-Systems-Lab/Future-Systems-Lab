@@ -10,7 +10,7 @@
 
 # 🥼 About Future Systems Lab
 
-Future Systems Lab builds **digital health and data-governance systems** integrating **applied informatics**, **wearable concept design**, **blockchain-based consent**, **analytics**, and **secure architectures**.  
+Future Systems Lab builds **digital health and data-governance systems** integrating **applied informatics**, **wearable concept design**, **blockchain-based consent**, **analytics**, and **secure architectures**.
 The work spans **system design**, **product development**, **interoperability**, **human-centered UX**, and **transparent data flows** across the healthcare and wellness ecosystem.
 
 ---
@@ -19,16 +19,16 @@ The work spans **system design**, **product development**, **interoperability**,
 
 Future Systems Lab demonstrates applied expertise in:
 
-- **Digital Health Architecture**  
-- **Health Informatics & Interoperability (HL7/FHIR/openEHR)**  
-- **MIS + Business Analytics Systems Modeling**  
-- **Governance, Consent, and Data Transparency**  
-- **Blockchain Architecture (EIP-712, DID/VC, ERC-20, ERC-721)**  
-- **Secure Identity & Access Design**  
-- **Behavioral & Sensory Interface Design**  
-- **Prototyping: Figma, Next.js, React Native, Wagmi, Hardhat**  
-- **Human-Computer Interaction & Hypnotic UX Patterns**  
-- **Product Design & Concept Development**  
+- **Digital Health Architecture**
+- **Health Informatics & Interoperability (HL7/FHIR/openEHR)**
+- **MIS + Business Analytics Systems Modeling**
+- **Governance, Consent, and Data Transparency**
+- **Blockchain Architecture (EIP-712, DID/VC, ERC-20, ERC-721)**
+- **Secure Identity & Access Design**
+- **Behavioral & Sensory Interface Design**
+- **Prototyping: Figma, Next.js, React Native, Wagmi, Hardhat**
+- **Human-Computer Interaction & Hypnotic UX Patterns**
+- **Product Design & Concept Development**
 
 ---
 
@@ -36,91 +36,91 @@ Future Systems Lab demonstrates applied expertise in:
 
 ---
 
-## 🧠 InstaPsych System  
-**Category:** Sensation-Driven Interaction Design  
+## 🧠 InstaPsych System
+**Category:** Sensation-Driven Interaction Design
 **Focus:** Adaptive Sensory UX • Interaction Flow Design • Applied Informatics • UX Research
 
-### Summary  
-InstaPsych is a **user-input pattern interface** that adapts visual and auditory fields in real time.  
+### Summary
+InstaPsych is a **user-input pattern interface** that adapts visual and auditory fields in real time.
 It is intentionally **non-diagnostic** and **non-clinical**, focusing on **experience architecture**, **computational mapping**, and **behavioral UX patterns**.
 
-### What It Demonstrates  
-- Sensory-driven interaction design  
-- Micro-interaction modeling  
-- Real-time audiovisual adaptation  
-- Pattern-based UX logic  
-- Product concept development  
-- Figma prototyping and visual system design  
+### What It Demonstrates
+- Sensory-driven interaction design
+- Micro-interaction modeling
+- Real-time audiovisual adaptation
+- Pattern-based UX logic
+- Product concept development
+- Figma prototyping and visual system design
 - Applied informatics logic (sensation → pattern → output)
 
-### Live Demo  
+### Live Demo
 - **YouTube Demo:** https://youtube.com/shorts/hALQEnDKW8U
 
-### Repository  
+### Repository
 - https://github.com/Future-Systems-Lab/InstaPsych
 
 ---
 
-## ⌚ NeuroBalance Watch  
-**Category:** Wearable Digital Health R&D  
+## ⌚ NeuroBalance Watch
+**Category:** Wearable Digital Health R&D
 **Focus:** Data Governance • Biosensing Concept Design • UI Architecture • Blockchain Consent
 
-### Summary  
+### Summary
 NeuroBalance is a conceptual brain-health wearable demonstrating how future systems might combine **user-controlled consent**, **biosensing concepts**, and **transparent governance**.
 
-### What It Demonstrates  
-- Conceptual biosensor engineering (GSR, pH, HRV, microfluidic signals)  
-- On-chain consent registry (smart contracts, Sepolia)  
-- Data governance & transparency modeling  
-- Wearable UI/UX architecture (React Native)  
-- Signal-to-interface mapping concepts  
+### What It Demonstrates
+- Conceptual biosensor engineering (GSR, pH, HRV, microfluidic signals)
+- On-chain consent registry (smart contracts, Sepolia)
+- Data governance & transparency modeling
+- Wearable UI/UX architecture (React Native)
+- Signal-to-interface mapping concepts
 - Health informatics thinking applied to personal health devices
 
-### Repository  
+### Repository
 - https://github.com/Future-Systems-Lab/NeuroBalance-Watch
 
 ---
 
-## 🧠 Mental Wellness Ecosystem  
-**Category:** Digital Health Systems Architecture  
+## 🧠 Mental Wellness Ecosystem
+**Category:** Digital Health Systems Architecture
 **Focus:** Blockchain Governance • Clinical & Data Informatics • Secure Consent Flows
 
-### Summary  
+### Summary
 A decentralized mental-wellness architecture that connects **behavioral science**, **consent governance**, **decentralized identity**, and **secure standards-based data exchange**.
 
-### Core Repositories  
-- https://github.com/Future-Systems-Lab/Where-Mental-Wellness-Meets-Metaverse  
-- https://github.com/Future-Systems-Lab/HypnoNeuro  
-- https://github.com/Future-Systems-Lab/EncryptHealth  
+### Core Repositories
+- https://github.com/Future-Systems-Lab/Where-Mental-Wellness-Meets-Metaverse
+- https://github.com/Future-Systems-Lab/HypnoNeuro
+- https://github.com/Future-Systems-Lab/EncryptHealth
 
 ---
 
-## 🧩 HypnoNeuro Modular Framework (L1–L3)  
-**Category:** Digital Therapeutic Experience Design (Non-Clinical)  
+## 🧩 HypnoNeuro Modular Framework (L1–L3)
+**Category:** Digital Therapeutic Experience Design (Non-Clinical)
 **Focus:** Experience Architecture • Personalization Logic • Narrative Interaction Models
 
-### Live Demonstrations  
-- **L2 Orthomolecular Dashboard MVP**  
-  - Live: https://orthomolecular-dashboard-4xyc07ulv-megs-projects-95a11e5b.vercel.app  
+### Live Demonstrations
+- **L2 Orthomolecular Dashboard MVP**
+  - Live: https://orthomolecular-dashboard-4xyc07ulv-megs-projects-95a11e5b.vercel.app
   - Repo: https://github.com/Future-Systems-Lab/Orthomolecular-Dashboard
 
-- **L1 / L3 Narrative Content**  
-  - L1 Induction: https://www.youtube.com/watch?v=xsGsPWgjbW4  
-  - EJ’s Path: https://www.youtube.com/watch?v=y1kB5UT1ksA  
+- **L1 / L3 Narrative Content**
+  - L1 Induction: https://www.youtube.com/watch?v=xsGsPWgjbW4
+  - EJ’s Path: https://www.youtube.com/watch?v=y1kB5UT1ksA
   - Isiah Narrative: https://drive.google.com/file/d/1JdT6pN2gT5BzjQlCne8z5HilSPJ7vYsu/view
 
 ---
 
-## 🧪 CBD Continuum Retail  
-**Category:** Applied Retail Systems & Data Integrity  
+## 🧪 CBD Continuum Retail
+**Category:** Applied Retail Systems & Data Integrity
 **Focus:** Supply Chain Transparency • Product Lifecycle • Analytics & Provenance
 
-### Summary  
+### Summary
 CBD Continuum was Apex, NC’s first CBD retail store, now a complete case study in **regulated transparency**, **COA verification**, and **traceable inventory management**.
 
-### Repositories  
-- https://github.com/Future-Systems-Lab/CBD-Continuum-Retail/tree/main/CBD-Products  
-- https://github.com/Future-Systems-Lab/CBD-Continuum-Retail/tree/main/CBD-Products/COAs  
+### Repositories
+- https://github.com/Future-Systems-Lab/CBD-Continuum-Retail/tree/main/CBD-Products
+- https://github.com/Future-Systems-Lab/CBD-Continuum-Retail/tree/main/CBD-Products/COAs
 
 ---
 
@@ -128,99 +128,99 @@ CBD Continuum was Apex, NC’s first CBD retail store, now a complete case study
 
 ## 🧩 Core ERC-20 Tokens
 
-### EncryptHealthToken (EHT)  
-- `0xbDaeb1d05E02D2751Ad07121510b5f0C436E2CdC`  
+### EncryptHealthToken (EHT)
+- `0xbDaeb1d05E02D2751Ad07121510b5f0C436E2CdC`
 - https://repo.sourcify.dev/11155111/0xbDaeb1d05E02D2751Ad07121510b5f0C436E2CdC/
 
-### HypnoNeuroToken (HNT)  
-- `0x411426f8E735F7940B20491609F08817A805b198`  
+### HypnoNeuroToken (HNT)
+- `0x411426f8E735F7940B20491609F08817A805b198`
 - https://repo.sourcify.dev/11155111/0x411426f8E735F7940B20491609F08817A805b198/
 
 ---
 
 ## 🎭 NFT Credentialing
 
-### MindMasteryNFT (L1–L3)  
-- `0xCb9EcB00574DB29976c7C54045d443666D5C7771`  
+### MindMasteryNFT (L1–L3)
+- `0xCb9EcB00574DB29976c7C54045d443666D5C7771`
 - https://repo.sourcify.dev/11155111/0xCb9EcB00574DB29976c7C54045d443666D5C7771/
 
 ---
 
 ## 📊 Activity Logging & Device Integration
 
-### UserActivity.sol  
-- `0xF63e9400807184e726445E105EC7a6C6Af1a86fB`  
+### UserActivity.sol
+- `0xF63e9400807184e726445E105EC7a6C6Af1a86fB`
 - https://repo.sourcify.dev/11155111/0xF63e9400807184e726445E105EC7a6C6Af1a86fB/
 
 ---
 
 ## ⚖️ Compliance & Consent Governance
 
-### ConsentPolicy.sol  
-- `0xf57190E2FEd57190d89aD63eE21B718354D3EeF1`  
+### ConsentPolicy.sol
+- `0xf57190E2FEd57190d89aD63eE21B718354D3EeF1`
 - https://repo.sourcify.dev/11155111/0xf57190E2FEd57190d89aD63eE21B718354D3EeF1/
 
 ---
 
 # 🔍 Global Verification Index
 
-## 🟩 Smart Contract Source  
+## 🟩 Smart Contract Source
 https://github.com/Future-Systems-Lab/Future-Systems-Lab/tree/main/contracts
 
-## 🟦 Sourcify Registry  
+## 🟦 Sourcify Registry
 https://repo.sourcify.dev/11155111/
 
-## 🟧 Architecture Layers  
-- Blockchain Layer  
-  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Blockchain-Layer.md  
-- Data Layer  
-  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Data-Layer.md  
-- Security & Privacy Layer  
-  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Security-Privacy-Layer.md  
-- Wearables & Sensors  
-  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Wearables-Sensor-Layer.md  
-- Full System Diagram  
-  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Full-System-Diagram.md  
+## 🟧 Architecture Layers
+- Blockchain Layer
+  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Blockchain-Layer.md
+- Data Layer
+  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Data-Layer.md
+- Security & Privacy Layer
+  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Security-Privacy-Layer.md
+- Wearables & Sensors
+  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Wearables-Sensor-Layer.md
+- Full System Diagram
+  https://github.com/Future-Systems-Lab/Future-Systems-Lab/blob/main/architecture/Full-System-Diagram.md
 
 ---
 
 # ⭐ Featured Contributions
 
-- **secure-health-login**  
-  https://github.com/Future-Systems-Lab/secure-health-login  
+- **secure-health-login**
+  https://github.com/Future-Systems-Lab/secure-health-login
 
-- **openmrs-core**  
-  https://github.com/openmrs/openmrs-core  
+- **openmrs-core**
+  https://github.com/openmrs/openmrs-core
 
-- **spellbook**  
-  https://github.com/duneanalytics/spellbook  
+- **spellbook**
+  https://github.com/duneanalytics/spellbook
 
-- **ehrbase**  
-  https://github.com/ehrbase/ehrbase  
+- **ehrbase**
+  https://github.com/ehrbase/ehrbase
 
-- **VITA Token Dashboard**  
-  https://dune.com/  
+- **VITA Token Dashboard**
+  https://dune.com/
 
 ---
 
 # 🔒 Security, Privacy & Compliance Framework
 
-### HIPAA-Informed  
-- No PHI on-chain  
-- Encrypted off-chain storage  
-- Wallet-based pseudonymization  
+### HIPAA-Informed
+- No PHI on-chain
+- Encrypted off-chain storage
+- Wallet-based pseudonymization
 
-### GDPR-Aligned  
-- Pseudonymization  
-- Data minimization  
-- On-chain revocation events  
+### GDPR-Aligned
+- Pseudonymization
+- Data minimization
+- On-chain revocation events
 
-### ALCOA  
-- Attributable  
-- Legible  
-- Contemporaneous  
-- Original  
-- Accurate  
+### ALCOA
+- Attributable
+- Legible
+- Contemporaneous
+- Original
+- Accurate
 
 ---
 
@@ -234,10 +234,10 @@ All deployed contracts are verified on Sourcify and linked directly from:
 
 ## 📊 Data Model Reproducibility
 The Data Layer includes:
-- full SQL schema  
-- PostgreSQL-compatible models  
-- Mermaid + PNG ERD diagrams  
-- example analytic queries  
+- full SQL schema
+- PostgreSQL-compatible models
+- Mermaid + PNG ERD diagrams
+- example analytic queries
 
 See: `architecture/Data-Layer.md`
 
@@ -249,4 +249,3 @@ All PNG diagrams and their live Mermaid source files are tracked under:
 ComplianceLog, ConsentPolicy, and UserActivity contracts create immutable, queryable audit trails for sessions, devices, and consent actions.
 
 This guarantees transparent, reproducible outcomes for reviewers, researchers, and auditors.
-

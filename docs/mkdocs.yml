@@ -1,0 +1,25 @@
+// Rights Reserved, Unlicensed
+
+site_name: EncryptHealth Documentation
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+
+nav:
+  - Home: index.md
+  - Architecture:
+      - Overview: architecture.md
+      - Blockchain Layer: blockchain.md
+      - Security & Privacy: security.md
+      - Wearables & Sensor Layer: wearables.md
+      - Governance: governance.md
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css

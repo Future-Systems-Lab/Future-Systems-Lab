@@ -1,0 +1,32 @@
+# Rights Reserved, Unlicensed
+from web3 import Web3
+import json
+
+# Sepolia RPC endpoint
+w3 = Web3(Web3.HTTPProvider("https://sepolia.infura.io/v3/9aa57ad06781409c8a2db52c2997992e"))
+
+# Correct EncryptHealthSessionStore address
+contract_address = "0x3Be8285F089cb53ed811CF0d8c79c19D8245db09"
+
+# Load ABI
+contract_abi = json.loads(open("EncryptHealthSessionStore_abi.json").read())
+
+# Initialize contract
+contract = w3.eth.contract(address=contract_address, abi=contract_abi)
+
+# Final EncryptHealth session hash (3-field version)
+session_hash = "0x8e14b50c9afadf00d22b8c44c83f11ce4b2c098aea85b65d44e7af704670a68c"
+
+# Build transaction
+tx = contract.functions.storeSessionHash(session_hash).build_transaction({
+    "from": w3.to_checksum_address("YOUR_WALLET_ADDRESS"),
+    "nonce": w3.eth.get_transaction_count("YOUR_WALLET_ADDRESS"),
+    "gas": 250000,
+    "gasPrice": w3.to_wei("4", "gwei")
+})
+
+# Sign & send transaction
+signed = w3.eth.account.sign_transaction(tx, "YOUR_PRIVATE_KEY")
+tx_hash = w3.eth.send_raw_transaction(signed.rawTransaction)
+
+print("TX HASH:", tx_hash.hex())
